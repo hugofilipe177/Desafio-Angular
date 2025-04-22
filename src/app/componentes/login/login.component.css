@@ -1,0 +1,59 @@
+
+header{
+    margin-top: 2em;
+    width:100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header #logoford{
+    width: 30%;
+}
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15%;
+    color:lime;
+    font-size: larger;
+}
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+}
+form .login{
+    width: 50%;
+    height: 12%;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+form .login:focus{
+  border-color: blue;
+  transition: 1s;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 3px rgb(63, 63, 192);
+}
+#checkbox{
+    padding-top: 5%;
+    width: 100%;
+    margin-left: 27%;
+    font-size: small;
+    color: black;
+}
+#login-auto{
+    scale: 1.5;
+}
+#botao_submit{
+    margin-top: 2%;
+    width: 20%;
+    height: 3em;
+    border-radius: 10px;
+    border-color: gray;
+    background-color: gray;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
