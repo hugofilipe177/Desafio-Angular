@@ -5,13 +5,14 @@
 <main>
     <p>Bem-Vindo</p>
     <form action="">
-        <input type="email" name= 'email' class="login" placeholder="Email*" required>
-        <input type="password" name= 'Senha' class="login" placeholder="Senha*" required>
+        <input type="text" name='nome' class="login" placeholder="Nome*" [(ngModel)]="nome" id="nome" required>
+        <span *ngIf=''></span>
+        <input type="password" name= 'Senha' class="login" id="senha"placeholder="Senha*" required>
         <section id="checkbox">
             <label for="login-auto" style="margin-right: 2%;"> Login Automático</label>
             <input type="checkbox" name="login-auto" id="login-auto">
         </section>
-        <input type="button" value="Logar" id="botao_submit">
+        <input type="button" value="Logar" id="botao_submit" onclick="">
     </form>
 </main>
 
