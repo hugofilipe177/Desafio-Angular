@@ -5,14 +5,19 @@
 <main>
     <p>Bem-Vindo</p>
     <form action="">
-        <input type="text" name='nome' class="login" placeholder="Nome*" [(ngModel)]="nome" id="nome" required>
-        <span *ngIf=''></span>
-        <input type="password" name= 'Senha' class="login" id="senha"placeholder="Senha*" required>
+        <input type="text" name='nome' class="login" placeholder="Nome*"  [formControl]="nome" id="nome" required>
+        <div class="erros">
+            <span class="erro"> {{ nomeErro }}</span>
+        </div>
+        <input type="password" name= 'Senha' class="login" [formControl]='senha' id="senha" placeholder="Senha*" required>
+        <div class="erros">
+            <span class="erro"> {{ senhaErro }}</span>
+        </div>
         <section id="checkbox">
             <label for="login-auto" style="margin-right: 2%;"> Login Automático</label>
             <input type="checkbox" name="login-auto" id="login-auto">
         </section>
-        <input type="button" value="Logar" id="botao_submit" onclick="">
+        <input type="button" value="Logar" id="botao_submit" (click)="atualizarErro()" onclick="">
     </form>
 </main>
 

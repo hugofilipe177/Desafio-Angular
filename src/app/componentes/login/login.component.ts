@@ -1,20 +1,34 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, ],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
+
+const api = 'http://localhost:3001/login';
+
+console.log(api)
+
 export class LoginComponent {
-
-}
-const nomeInput = document.getElementById('nome') as HTMLInputElement;
-var nome: string = nomeInput? nomeInput.value :''; 
-
-var senha: string | null = (document.getElementById('senha') as HTMLInputElement).value;
-
-if (nome !== "" && senha !== "") {
+  nome = new FormControl('');
+  senha = new FormControl('');
   
+  nomeErro: string = "";
+  senhaErro: string = "";
+
+  updateName(field: FormControl, fieldName: string): string {
+    if(this.nome.value || this.senha.value === ''){
+      return `Por favor, digite ${fieldName}`;
+    }
+   return ''; 
+  }
+
+  atualizarErro(){
+    this.nomeErro = this.updateName(this.nome, 'seu Nome');
+    this.senhaErro = this.updateName(this.senha, ' sua Senha');
+  }
 }

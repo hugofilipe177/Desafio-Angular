@@ -34,8 +34,8 @@ form .login{
 form .login:focus{
   border-color: blue;
   transition: 1s;
-  transform: scale(1.1);
-  box-shadow: 2px 2px 3px rgb(63, 63, 192);
+  transform: scale(1.02);
+
 }
 #checkbox{
     padding-top: 5%;
@@ -56,4 +56,14 @@ form .login:focus{
     background-color: gray;
     opacity: 0.6;
     cursor: not-allowed;
+}
+.erros{
+    width: 50%;
+    display: flex;
+    align-items: normal;
+}
+.erro{
+    color: red;
+    font-size: small;
+
 }
