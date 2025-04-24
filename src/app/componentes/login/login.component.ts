@@ -9,9 +9,9 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 
-const api = 'http://localhost:3001/login';
 
-console.log(api)
+
+
 
 export class LoginComponent {
   nome = new FormControl('');
@@ -29,6 +29,6 @@ export class LoginComponent {
 
   atualizarErro(){
     this.nomeErro = this.updateName(this.nome, 'seu Nome');
-    this.senhaErro = this.updateName(this.senha, ' sua Senha');
+    this.senhaErro = this.updateName(this.senha, 'sua Senha');
   }
 }
