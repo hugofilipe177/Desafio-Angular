@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { routes } from '../../app.routes';
+import { ServicoBackComponent } from '../servico-back/servico-back.component';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ServicoBackComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -30,5 +32,12 @@ export class LoginComponent {
   atualizarErro(){
     this.nomeErro = this.updateName(this.nome, 'seu Nome');
     this.senhaErro = this.updateName(this.senha, 'sua Senha');
+  }
+
+  botao_envio(){
+    
+
+    const botao = document.getElementById('botao_submit')
+    
   }
 }
