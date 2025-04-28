@@ -34,10 +34,15 @@ export class LoginComponent {
   }
   checkarLogin() {
     const erro = document.querySelectorAll('.erro');
+    const nome = this.nome.value || '';
+    const botao_submit = document.querySelector('#botao_submit')
     const validacao = this.servico.api_login(this.nome.value ,this.senha.value);    
     const senhaValue = this.senha.value || '';
     if (senhaValue.length < 5) {
       this.senhaErro = 'A senha deve conter no mínimo 5 caracteres.';
+    }
+    if(senhaValue.length >= 5 && nome.length >= 4 ){
+      botao_submit?.classList.add('botao_certo');
     }
     validacao.subscribe({ next:(resposta)=> {if(resposta.id){
       this.router.navigate(['/home'])

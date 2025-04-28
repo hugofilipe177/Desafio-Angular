@@ -67,3 +67,11 @@ form .login:focus{
     font-size: small;
 
 }
+#botao_certo{
+    margin-top: 2%;
+    width: 20%;
+    height: 3em;
+    border-radius: 10px;
+    border-color: rgb(55, 79, 213);
+    background-color: rgb(33, 43, 156);
+}
