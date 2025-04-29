@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ServicoBackComponent } from '../servico-back/servico-back.component';
 import { Router } from '@angular/router';
+import { CarroComponent } from '../carro/carro.component';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, CarroComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -45,7 +46,7 @@ export class LoginComponent {
       botao_submit?.classList.add('botao_certo');
     }
     validacao.subscribe({ next:(resposta)=> {if(resposta.id){
-      this.router.navigate(['/home'])
+      this.router.navigateByUrl('/home');
       erro.forEach((elemento) => {
         elemento.innerHTML = '';
       })

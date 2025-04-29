@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { map, Observable, tap } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,7 @@ import { map, Observable, tap } from 'rxjs';
   styleUrl: './servico-back.component.css'
 })
 export class ServicoBackComponent {
-constructor (private http: HttpClient){}
+constructor (private http: HttpClient, router: Router){}
 
 api_login(nome: string | null, senha: string | null): Observable<any> {  
   return this.http.post('http://localhost:3001/login', { nome, senha });

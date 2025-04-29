@@ -1,0 +1,44 @@
+header {
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    width: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+main {
+    height: 94vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+}
+
+#mini_menu {
+    transition: all 0.3s ease;
+}
+
+.menu_aberto {
+    display: table;
+    background-color: red;
+}
+
+.menu_fechado {
+    display: none;
+}
