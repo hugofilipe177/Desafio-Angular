@@ -54,19 +54,19 @@ th{
 #button{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
     margin-left: 1%;
     row-gap: 4px;
-    width: 2%;
-    height: 3vh ;
     background: transparent;
-    border: red solid 1px;
+    border: transparent;
 
 }
 button span{
-    width: 100%;
+    width: 30px ;
     height: 3px;
     border-radius: 10px;
     background: black;
+}
+.btn{
+    
 }
