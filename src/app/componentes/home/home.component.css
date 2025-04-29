@@ -18,16 +18,19 @@ main {
 }
 
 table {
-    width: 100%;
+    height: 100%;
+    width:20%;
     border-collapse: collapse;
 }
 
 td {
     padding: 10px;
     border: 1px solid #ddd;
-    cursor: pointer;
     background-color: #3498db;
     color: white;
+}
+th{
+    height: 20%
 }
 
 #mini_menu {
@@ -35,10 +38,35 @@ td {
 }
 
 .menu_aberto {
-    display: table;
-    background-color: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100vh;
+    background-color:white;
+    z-index: 10;
+    
 }
 
 .menu_fechado {
     display: none;
+}
+#button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    row-gap: 4px;
+    width: 2%;
+    height: 3vh ;
+    background: transparent;
+    border: red solid 1px;
+
+}
+button span{
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background: black;
 }
