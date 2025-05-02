@@ -61,9 +61,15 @@ export class HomeComponent implements OnInit {
     home?.addEventListener('click', ()=> {
       this.router.navigateByUrl('/home')
       console.log('click')
-    })
-    
-    
-      
+    })  
+  }
+  modal(){
+    setTimeout(()=>{
+      const abrir_modal = document.getElementById('modal');
+      if (abrir_modal) {
+        const bootstrapModal = new (window as any).bootstrap.Modal(abrir_modal);
+        bootstrapModal.show();
+      }
+    },0);
   }
 }
