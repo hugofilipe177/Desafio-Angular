@@ -1,4 +1,4 @@
-import { booleanAttribute, Component } from '@angular/core';
+import { booleanAttribute, Component, inject, Input, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ServicoBackComponent } from '../servico-back/servico-back.component';
@@ -12,7 +12,10 @@ import { CarroComponent } from '../carro/carro.component';
   styleUrl: './login.component.css'
 })
 
+
 export class LoginComponent {
+  @Input()infoLogin: string | undefined;
+
   nome = new FormControl('');
   senha = new FormControl('');
   
@@ -46,7 +49,10 @@ export class LoginComponent {
       botao_submit?.classList.add('botao_certo');
     }
     validacao.subscribe({ next:(resposta)=> {if(resposta.id){
-      this.router.navigateByUrl('/home');
+     const infoLogin = resposta;
+     console.log(resposta)
+
+      this.router.navigateByUrl('/home', { state: resposta });
       erro.forEach((elemento) => {
         elemento.innerHTML = '';
       })

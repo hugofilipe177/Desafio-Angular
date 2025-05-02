@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,25 +8,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  infoLogin = { nome: '', email: '' };
+  nome: string | any;
+  email:string | any;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void { 
     this.menu();
-    this.perfil();
+    const state = history.state;
+    if (state && state.nome && state.email) {
+      this.infoLogin = state;
+    }
   }
-  perfil(){
-    const perfil:any = document.querySelector('#perfil')
-    perfil.addEventListener('mouseover', ()=> {
-      console.log('funciona')
-    })
+  login(){
   }
+  // login(){
+  //   @Input()  {}
+  // }
 
   menu() {
-    const menu_aparecer = document.querySelector('#mini_menu');
-    const menuButton = document.querySelector('#Menu');
-    console.log ('talvez')
-    menuButton?.addEventListener('click', () => {
-      menu_aparecer?.classList.add('menu_aberto');
-      menu_aparecer?.classList.remove('menu_fechado');
+    const menu_aparecer = document.getElementById('botao');
+    const offcanvas_base = document.getElementById('menuLateral');
+    const offcanvas = new (window as any).bootstrap.Offcanvas(offcanvas_base);
+    let aberto = false;
+    
+    menu_aparecer?.addEventListener('click', () => {
+      if(aberto){
+        offcanvas.hide()
+       
+      } else{
+        offcanvas.show();
+      }
+      offcanvas_base?.addEventListener('hidden.bs.offcanvas', ()=>{ 
+        aberto = false;
+      })
+      
     });
+  
+  }  
+  logout(){
+    const sair = document.getElementById('logout');
+    sair?.addEventListener('click', () =>{
+      this.router.navigateByUrl('/')
+    })
+    
+      
   }
 }

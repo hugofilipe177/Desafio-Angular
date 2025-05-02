@@ -11,7 +11,7 @@ header img {
 }
 
 main {
-    height: 94vh;
+    height: 93vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@ th{
     top: 0;
     left: 0;
     width: 30%;
-    height: 100vh;
+    height: 100%;
     background-color:white;
     z-index: 10;
     
@@ -51,9 +51,11 @@ th{
 .menu_fechado {
     display: none;
 }
-#button{
+#botao{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     margin-left: 1%;
     row-gap: 4px;
@@ -67,6 +69,37 @@ button span{
     border-radius: 10px;
     background: black;
 }
-.btn{
+#perfil{
+    width: 100%;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 0%;
+    right: 95%;
+    z-index: 1000;
+    display: none;
     
+  }
+  .dropdown-toggle::after {
+  display: none;
+}
+#div_perfil{
+    margin-right: 1%;
+    width: 3%;
+}
+#logoford{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    img{
+        width: 20%;
+    }
+}
+#div_perfil .info {
+    pointer-events: none;
 }
