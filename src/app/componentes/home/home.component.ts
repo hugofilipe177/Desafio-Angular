@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void { 
     this.menu();
+    this.transferencias();
     const state = history.state;
     if (state && state.nome && state.email) {
       this.infoLogin = state;
@@ -47,11 +48,21 @@ export class HomeComponent implements OnInit {
     });
   
   }  
-  logout(){
-    const sair = document.getElementById('logout');
+  transferencias(){
+    const sair = document.querySelector('#logout');
+    const dashboard = document.getElementById('dash');
+    const home = document.getElementById('home')
     sair?.addEventListener('click', () =>{
       this.router.navigateByUrl('/')
     })
+    dashboard?.addEventListener('click',()=>{
+      this.router.navigateByUrl('')
+    })
+    home?.addEventListener('click', ()=> {
+      this.router.navigateByUrl('/home')
+      console.log('click')
+    })
+    
     
       
   }
