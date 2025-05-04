@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ServicoBackComponent } from '../servico-back/servico-back.component';
 import { Router } from '@angular/router';
-import { CarroComponent } from '../carro/carro.component';
+
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, ReactiveFormsModule, CarroComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     if (state && state.nome && state.email) {
       this.infoLogin = state;
     }
+    this.modal();
   }
   login(){
   }
@@ -64,12 +65,10 @@ export class HomeComponent implements OnInit {
     })  
   }
   modal(){
-    setTimeout(()=>{
-      const abrir_modal = document.getElementById('modal');
-      if (abrir_modal) {
-        const bootstrapModal = new (window as any).bootstrap.Modal(abrir_modal);
-        bootstrapModal.show();
-      }
-    },0);
+    document.addEventListener('DOMContentLoaded', function () {
+      const abrir_modal = new (window as any).bootstrap.Modal(document.getElementById('modal'),
+      { backdrop: false });
+      abrir_modal.show();
+    });
   }
 }
