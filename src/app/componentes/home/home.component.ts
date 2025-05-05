@@ -17,24 +17,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void { 
     this.menu();
     this.transferencias();
-    const state = history.state;
-    if (state && state.nome && state.email) {
-      this.infoLogin = state;
-    }
     this.modal();
   }
-  login(){
-  }
-  // login(){
-  //   @Input()  {}
-  // }
+ perfil(){
+  const Perfil = this.infoLogin;
+ }
 
   menu() {
     const menu_aparecer = document.getElementById('botao');
     const offcanvas_base = document.getElementById('menuLateral');
     const offcanvas = new (window as any).bootstrap.Offcanvas(offcanvas_base);
     let aberto = false;
-    
+
+   
     menu_aparecer?.addEventListener('click', () => {
       if(aberto){
         offcanvas.hide()
@@ -57,18 +52,16 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl('/')
     })
     dashboard?.addEventListener('click',()=>{
-      this.router.navigateByUrl('')
+      this.router.navigateByUrl('/dashboard', { state:this.infoLogin })
     })
     home?.addEventListener('click', ()=> {
       this.router.navigateByUrl('/home')
-      console.log('click')
     })  
   }
   modal(){
-    document.addEventListener('DOMContentLoaded', function () {
+    
       const abrir_modal = new (window as any).bootstrap.Modal(document.getElementById('modal'),
       { backdrop: false });
       abrir_modal.show();
-    });
   }
 }

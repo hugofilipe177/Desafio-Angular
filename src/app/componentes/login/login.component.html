@@ -26,9 +26,11 @@
         <div class="erros">
             <span class="erro"> {{ senhaErro }}</span>
         </div>
-        <section id="checkbox">
-            <label for="login-auto" style="margin-right: 2%;"> Login Automático</label>
-            <input type="checkbox" name="login-auto" id="login-auto">
+        <section id="checkbox" style="display: flex; justify-content: end; width: 34%;">
+            <div class="form-check form-switch mb-3" style="flex-direction: row-reverse; display: flex;">
+                <input class="form-check-input" type="checkbox" role="switch" id="toggleSwitch">
+                <label class="form-check-label" for="toggleSwitch">logar automático</label>
+              </div>
         </section>
         <span *ngIf="mensagemErro" class="erro"> {{ mensagemErro }}</span>
         <input type="button" value="Logar" class="botao_errado"  id="botao_submit" (click)="checkarLogin()" Ngif>

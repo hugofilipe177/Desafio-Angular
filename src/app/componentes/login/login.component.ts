@@ -1,7 +1,7 @@
 import { booleanAttribute, Component, inject, Input, input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ServicoBackComponent } from '../servico-back/servico-back.component';
+import { ServicoBackComponent } from '../servico-back/servico-back.service';
 import { Router } from '@angular/router';
 
 
@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit{
   nomeErro: string = "";
   senhaErro: string = "";
   mensagemErro: any;
+  botaoTog: any
 
   constructor(private servico: ServicoBackComponent, private router: Router){}
   ngOnInit(): void { 
@@ -79,6 +80,18 @@ export class LoginComponent implements OnInit{
         }
       }
     }) 
-
   }
+    botao_toggle(){
+      const botaoTog = document.getElementById('toggleSwitch') as HTMLInputElement;
+      botaoTog?.addEventListener('change', function() {
+      if(botaoTog.checked) {
+        document.body.style.backgroundColor = '#343a40';
+        document.body.style.color = 'white';
+      } else {
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+      }
+    });
+  }
+  
 }

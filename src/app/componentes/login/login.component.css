@@ -112,3 +112,6 @@ form .login:focus{
 #foto_carro{
     width: 70%;
 }
+#toggleSwitch{
+    margin-left: 5%;
+}

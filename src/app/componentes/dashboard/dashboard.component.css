@@ -17,22 +17,6 @@ main {
     align-items: center;
 }
 
-table {
-    height: 100%;
-    width:20%;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #3498db;
-    color: white;
-}
-th{
-    height: 20%
-}
-
 #mini_menu {
     transition: all 0.3s ease;
 }
@@ -99,23 +83,4 @@ button span{
     img{
         width: 20%;
     }
-}
-#div_perfil .info {
-    pointer-events: none;
-}
-.modal-content{
-    background-color: rgba(212, 215, 232, 0.438);
-    border: none;
-    box-shadow: none;
-    width: 60vh;
-    height: 60vh;
-    margin-top: 18vh;
-
-}
-.modal-dialog{
-    margin: 0;
-    margin-left: 35%;
-}
-#foto_carro{
-    width: 100%;
 }
