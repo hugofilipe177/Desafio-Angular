@@ -12,6 +12,13 @@ header #logoford{
 #area_login{
     display: flex;
     flex-direction: column;
+    background-color: #e5e7eb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 2em;
+}
+p{
+    color: rgb(83, 83, 230);
 }
 #itens_all{
     display: flex;
@@ -33,14 +40,15 @@ form{
     margin-top: 10%;
 }
 form .login{
-    width: 50%;
-    height: 12%;
-    margin-top: 2%;
+    width: 40vh;
+    height: 4vh;
+    border-color: #1e3a8a;
     border-radius: 5px;
 }
 form .login:focus{
-  border-color: blue;
-  transition: 1s;
+  border-color: #1e3a8a;
+  box-shadow: #1e3a8a 3px 3px 3px;
+  transition: 0.3s;
   transform: scale(1.02);
 
 }
@@ -56,14 +64,14 @@ form .login:focus{
 }
 #botao_submit{
     margin-top: 2%;
-    width: 20%;
+    width: 20vh;
     height: 3em;
     border-radius: 10px;
-    border-color: gray;
-    background-color: gray;
-    opacity: 0.6;
-    cursor: not-allowed;
+    background-color: 0.3s;
+    transform: 0.2s;
+
 }
+
 .erros{
     width: 50%;
     display: flex;
@@ -74,7 +82,7 @@ form .login:focus{
     font-size: small;
 
 }
-#botao_certo{
+.botao_certo{
     margin-top: 2%;
     width: 20%;
     height: 3em;
@@ -82,6 +90,18 @@ form .login:focus{
     border-color: rgb(55, 79, 213);
     background-color: rgb(33, 43, 156);
 }
+.botao_certo:hover{
+    transform: scale(1.05);
+    background-color: #1e40af;
+    color: white;
+}
+.botao_errado{
+    border-color: #939599;
+    background-color: #999b9e;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 #carro1{
     width: 100%;
     height: 100vh;

@@ -12,11 +12,17 @@
 
     <p>Bem-Vindo</p>
     <form action="">
-        <input type="text" name='nome' class="login" placeholder="Nome*"  [formControl]="nome" id="nome" required>
+        <div style="display: flex; width: 100%; align-items: center; justify-content: center;">
+            <label for="nome" style="color: rgb(46, 46, 209); margin-right: 2%;">Nome: </label>
+            <input type="text" name='nome' class="login" placeholder="João..."  [formControl]="nome" id="nome" required>
+        </div>
         <div class="erros">
             <span class="erro"> {{ nomeErro }}</span>
         </div>
-        <input type="password" name= 'Senha' class="login" [formControl]='senha' id="senha" placeholder="Senha*" required>
+        <div style="display: flex; width: 100%; align-items: center; justify-content: center; margin-top: 2%;">
+            <label for="senha" style="color: rgb(46, 46, 209); margin-right:2%">Senha: </label> 
+            <input type="password" name= 'Senha' class="login" [formControl]='senha' id="senha" placeholder="1234..." required>
+        </div>
         <div class="erros">
             <span class="erro"> {{ senhaErro }}</span>
         </div>
@@ -25,7 +31,7 @@
             <input type="checkbox" name="login-auto" id="login-auto">
         </section>
         <span *ngIf="mensagemErro" class="erro"> {{ mensagemErro }}</span>
-        <input type="button" value="Logar"  id="botao_submit" (click)="checkarLogin()">
+        <input type="button" value="Logar" class="botao_errado"  id="botao_submit" (click)="checkarLogin()" Ngif>
     </form>
 </main>
 </div>
