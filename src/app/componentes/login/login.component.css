@@ -115,3 +115,12 @@ form .login:focus{
 #toggleSwitch{
     margin-left: 5%;
 }
+i{
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    color: black;
+    scale: 0.7;
+    transform: translate(-30%, 30%);
+    cursor: pointer;
+}

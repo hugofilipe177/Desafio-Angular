@@ -15,9 +15,10 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit{
   @Input()infoLogin: string | undefined;
-
+  mostrar_Senha:boolean = false
   nome = new FormControl('');
   senha = new FormControl('');
+  auto_login = new FormControl(false);
   
   nomeErro: string = "";
   senhaErro: string = "";
@@ -28,6 +29,8 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void { 
     this.nome.valueChanges.subscribe(() => this.alteração_cor());
     this.senha.valueChanges.subscribe(() => this.alteração_cor());
+
+    
   }
 
   updateName(field: FormControl, fieldName: string): string {
@@ -49,7 +52,6 @@ export class LoginComponent implements OnInit{
     if(senhaValue.length >= 5 && nome.length >= 4 ){
       botao_submit?.classList.add('botao_certo');
       botao_submit?.classList.remove('botao_errado');
-      console.log('funcionou')
     }else {
       botao_submit?.classList.remove('botao_certo');
       botao_submit?.classList.add('botao_errado');
@@ -68,12 +70,19 @@ export class LoginComponent implements OnInit{
     validacao.subscribe({ next:(resposta)=> {if(resposta.id){
      const infoLogin = resposta;
      console.log(resposta)
-
       this.router.navigateByUrl('/home', { state: resposta });
       erro.forEach((elemento) => {
         elemento.innerHTML = '';
       })
         }
+          
+            if(this.auto_login.value){
+            localStorage.setItem('local_storage',JSON.stringify (resposta));
+            console.log(this.auto_login.value);
+            
+          }else{
+            sessionStorage.setItem("session_storage", JSON.stringify (resposta))
+            }
       }, error: (error) => {
         if(error.error && error.error.message){
           this.mensagemErro = error.error.message;
@@ -93,5 +102,7 @@ export class LoginComponent implements OnInit{
       }
     });
   }
-  
+  senha_visivel(){
+    this.mostrar_Senha = !this.mostrar_Senha;
+  }
 }
