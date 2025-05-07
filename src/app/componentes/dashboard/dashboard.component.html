@@ -1,11 +1,12 @@
 <header>
     <button id="botao">
-    <span></span>
-    <span></span>
-    <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
 
-    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="menuLateral"
+        aria-labelledby="menuLateralLabel">
         <div class="offcanvas-body">
             <div id="logoford">
                 <img src="/ArquivosDeSuporteDesafioAngular/img/ford.png" alt="Logo Ford">
@@ -13,19 +14,77 @@
             <p></p>
             <p class="btn btn-outline-dark w-100 mb-2 " id="home">Home</p>
             <p class="btn btn-outline-dark w-100 mb-2" id="dash">Dashboard</p>
-          </div>
-        </div>    
+        </div>
+    </div>
     <div class="dropdown text-end" id="div_perfil">
         <a class="d-block link-dark text-decoration-none dropdown-toggle" aria-expanded="false">
-        <img src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000" alt="imagem perfil" id="perfil">
+            <img src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000" alt="imagem perfil" id="perfil">
         </a>
-        
+
         <ul class="dropdown-menu dropdown-menu-start text-small">
-            <li><h5 class="dropdown-header">Login</h5></li>
-            <li><h6 class="dropdown-item info">Nome: {{ infoperfil.nome}}</h6></li>
-            <li><h6 class="dropdown-item info">Email: {{ infoperfil.email }}</h6></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+                <h5 class="dropdown-header">Login</h5>
+            </li>
+            <li>
+                <h6 class="dropdown-item info">Nome: {{ infoperfil.nome}}</h6>
+            </li>
+            <li>
+                <h6 class="dropdown-item info">Email: {{ infoperfil.email }}</h6>
+            </li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
             <li><button class="dropdown-item" id="logout">logout</button></li>
-          </ul>
-      </div> 
+        </ul>
+    </div>
 </header>
+
+<main>
+    <div id="container-main">
+        <div class="container mt-4">
+            <div class="row">
+
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="width: 18rem;">                            
+                        <div class="card-body">
+                            <div>
+                                <h5 class="card-title">Card 1</h5>
+                            </div>
+                            <select name="" id="opcao_carro"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total de Vendas</h5>
+                            <p class="card-text">Conteúdo do Card 2.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Conectados</h5>
+                            <p class="card-text">Conteúdo do Card 3.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Update Software</h5>
+                            <p class="card-text">Conteúdo do Card 4.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input type="text" [(ngModel)]="termoBusca" (input)="pesquisarCarros()" id="pesquisa"
+            placeholder="Buscar carros...">
+    </div>
+</main>

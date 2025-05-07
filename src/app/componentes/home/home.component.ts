@@ -59,7 +59,6 @@ export class HomeComponent implements OnInit {
     })  
   }
   modal(){
-    
       const abrir_modal = new (window as any).bootstrap.Modal(document.getElementById('modal'),
       { backdrop: false });
       abrir_modal.show();

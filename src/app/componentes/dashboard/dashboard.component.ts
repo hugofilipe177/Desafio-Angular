@@ -1,23 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule }     from '@angular/forms';  
 import { HomeComponent } from '../home/home.component';
+import { ServicoBackComponent } from '../servico-back/servico-back.service';
+import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
+  standalone: true,
   selector: 'app-dashboard',
-  imports: [],
+  imports: [ CommonModule, FormsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
   private _home: any;
+  carro: [] | any;
   perfil: any;
-infoperfil: any;
+  infoperfil: any;
+  termoBusca: string = '';
 
-constructor(private router:Router, _home: HomeComponent ){}
+constructor(private router:Router, private servicoBack: ServicoBackComponent){}
+
+
 
 ngOnInit(): void {
   this.menu();
   this.transferencias();
+  this.pesquisarCarros();
+}
+
+pesquisarCarros(): void {
+
 }
 
 menu() {
@@ -56,3 +71,4 @@ menu() {
     })  
   }
 }
+

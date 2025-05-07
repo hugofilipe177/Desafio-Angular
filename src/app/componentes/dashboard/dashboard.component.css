@@ -16,6 +16,12 @@ main {
     justify-content: center;
     align-items: center;
 }
+#container-main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
 
 #mini_menu {
     transition: all 0.3s ease;
@@ -83,4 +89,12 @@ button span{
     img{
         width: 20%;
     }
+}
+.separacao{
+    display: block;
+    position:relative;
+    top: 50px;
+    width: 100%;
+    height: 2px;
+    background: black;
 }

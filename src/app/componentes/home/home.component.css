@@ -17,22 +17,6 @@ main {
     align-items: center;
 }
 
-table {
-    height: 100%;
-    width:20%;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #3498db;
-    color: white;
-}
-th{
-    height: 20%
-}
-
 #mini_menu {
     transition: all 0.3s ease;
 }
