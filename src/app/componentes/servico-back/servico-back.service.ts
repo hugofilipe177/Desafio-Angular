@@ -23,8 +23,8 @@ api_login(nome: string | null, senha: string | null): Observable<any> {
   return this.http.post('http://localhost:3001/login', { nome, senha });
 };
 
-api_Carro(termo: any): Observable<any>{
-  return this.http.post('http://localhost:3001/vehicles', termo);
+api_Carro(): Observable<any>{
+  return this.http.get('http://localhost:3001/vehicles');
   
 };
 }

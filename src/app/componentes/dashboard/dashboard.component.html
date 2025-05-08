@@ -25,12 +25,7 @@
             <li>
                 <h5 class="dropdown-header">Login</h5>
             </li>
-            <li>
-                <h6 class="dropdown-item info">Nome: {{ infoperfil.nome}}</h6>
-            </li>
-            <li>
-                <h6 class="dropdown-item info">Email: {{ infoperfil.email }}</h6>
-            </li>
+
             <li>
                 <hr class="dropdown-divider">
             </li>
@@ -45,12 +40,19 @@
             <div class="row">
 
                 <div class="col-md-3 mb-4">
-                    <div class="card" style="width: 18rem;">                            
+                    <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <div>
                                 <h5 class="card-title">Card 1</h5>
                             </div>
-                            <select name="" id="opcao_carro"></select>
+                            <form [formGroup]="selectCar">
+                                <select [(ngModel)]="vehicles" class="form-select" formControlName="selectedCar">
+                                    <option [ngValue]="">Selecione um carro</option>
+                                    <option *ngFor="let car of vehicles" [value]="car.id">
+                                        {{ car.vehicle }}
+                                    </option>
+                                </select>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -59,7 +61,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Total de Vendas</h5>
-                            <p class="card-text">Conteúdo do Card 2.</p>
+                            <p class="card-text">{{ selectForm }}.</p>
                         </div>
                     </div>
                 </div>
@@ -83,8 +85,5 @@
                 </div>
             </div>
         </div>
-
-        <input type="text" [(ngModel)]="termoBusca" (input)="pesquisarCarros()" id="pesquisa"
-            placeholder="Buscar carros...">
     </div>
 </main>

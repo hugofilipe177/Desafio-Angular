@@ -1,29 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule }     from '@angular/forms';  
-import { HomeComponent } from '../home/home.component';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule }     from '@angular/forms';  
 import { ServicoBackComponent } from '../servico-back/servico-back.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { Veiculo, vinVeiculos } from '../../models/veiculo.model'
 
 
 @Component({
   standalone: true,
   selector: 'app-dashboard',
-  imports: [ CommonModule, FormsModule],
+  imports: [ CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
   private _home: any;
-  carro: [] | any;
-  perfil: any;
-  infoperfil: any;
+  vehicles: Veiculo[] = [];
+  vinVeiculos!: vinVeiculos;
+  selectForm!: Veiculo; 
   termoBusca: string = '';
+  dropdownWidth: string = 'auto';
 
 constructor(private router:Router, private servicoBack: ServicoBackComponent){}
 
-
+selectCar = new FormGroup({
+  selectedCar: new FormControl<string |number | null>(null)
+});
 
 ngOnInit(): void {
   this.menu();
@@ -32,11 +35,26 @@ ngOnInit(): void {
 }
 
 pesquisarCarros(): void {
+   this.servicoBack.api_Carro().subscribe({
+    next: (data: any) => {
+      console.log('Dados recebidos:', data);
+      this.vehicles = data.vehicles;
+      console.log('Veículos após atribuição:', this.vehicles);
+    },
+    error: (err) => {
+      console.error('Erro ao carregar carros:', err);
+    }
+  });
 
+  // this.selectCar.controls.selectedCar.valueChanges.subscribe(id =>{
+  //   const found = this.vehicles.find(v => v.id == id);
+  //   if(found) this.selectForm = found;
+  // })
 }
 
+
+
 menu() {
-  const infoperfil = this._home.perfil() ;  
   const menu_aparecer = document.getElementById('botao');
   const offcanvas_base = document.getElementById('menuLateral');
   const offcanvas = new (window as any).bootstrap.Offcanvas(offcanvas_base);
