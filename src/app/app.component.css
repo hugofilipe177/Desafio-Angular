@@ -1,7 +1,10 @@
 main{
     display: flex;
 }
-app-login{
+/* app-login{
     font-family: "Roboto", sans-serif;
     background-color:rgba(235, 235, 240, 0.443);
+} */
+:host{
+    height: 100%;
 }
