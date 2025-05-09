@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { vinVeiculos } from '../../models/veiculo.model';
 
 
 
@@ -27,4 +28,8 @@ api_Carro(): Observable<any>{
   return this.http.get('http://localhost:3001/vehicles');
   
 };
+api_vin(vin:string):Observable<vinVeiculos>{
+  return this.http.post<vinVeiculos>('http://localhost:3001/vehicleData', {vin} );
 }
+}
+

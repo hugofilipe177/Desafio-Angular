@@ -5,7 +5,8 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 import { defesaLoginGuard } from './componentes/servico-back/defesa-login.guard';
 
 export const routes: Routes = [
-    {path: '', component: LoginComponent, canActivate: [defesaLoginGuard]} ,
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path: 'login', component: LoginComponent, canActivate: [defesaLoginGuard]} ,
     { path:'home', component: HomeComponent},
     { path:'dashboard', component: DashboardComponent}
 ];

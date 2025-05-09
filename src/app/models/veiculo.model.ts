@@ -6,6 +6,7 @@ export interface Veiculo{
   volumetotal: number | string
   connected: number | string
   softwareUpdates: number | string
+  img: string
 }
 
 export interface vinVeiculos {

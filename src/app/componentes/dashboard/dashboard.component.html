@@ -43,11 +43,11 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <div>
-                                <h5 class="card-title">Card 1</h5>
+                                <h5 class="card-title">Selecione o Carro</h5>
                             </div>
                             <form [formGroup]="selectCar">
-                                <select [(ngModel)]="vehicles" class="form-select" formControlName="selectedCar">
-                                    <option [ngValue]="">Selecione um carro</option>
+                                <select (change)="mudarcarro(carro.value)" #carro class="form-select"
+                                    formControlName="selectedCar">
                                     <option *ngFor="let car of vehicles" [value]="car.id">
                                         {{ car.vehicle }}
                                     </option>
@@ -61,7 +61,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Total de Vendas</h5>
-                            <p class="card-text">{{ vehicles[].volumetotal}}.</p>
+                            <p class="card-text">{{ carSelecionado()?.volumetotal}}</p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Conectados</h5>
-                            <p class="card-text">Conteúdo do Card 3.</p>
+                            <p class="card-text">{{carSelecionado()?.connected}}</p>
                         </div>
                     </div>
                 </div>
@@ -79,11 +79,53 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Update Software</h5>
-                            <p class="card-text">Conteúdo do Card 4.</p>
+                            <p class="card-text">{{carSelecionado()?.softwareUpdates}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container-fluid justify-content-center align-items-center d-flex flex-fill">
+            <img class="img-fluid w-50" [src]="carSelecionado()?.img" alt="">
+        </div>
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"> código-Vin </th>
+                        <th scope="col"> Odometro </th>
+                        <th scope="col"> Nivel de combustivel </th>
+                        <th scope="col"> status </th>
+                        <th scope="col"> lat. </th>
+                        <th scope="col"> long. </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                                <input name="código-Vin" placeholder="Digite o código" #vin (change)="pesquisarVin(vin.value)">
+                        </th>
+                        <td>{{ vinSelecionado()?.odometro }}</td>
+                        <td>{{ vinSelecionado()?.nivelCombustivel}}</td>
+                        <td>{{ vinSelecionado()?.status}}</td>
+                        <td>{{ vinSelecionado()?.lat}}</td>
+                        <td>{{ vinSelecionado()?.long}}</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+
+
 </main>

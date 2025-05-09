@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule }     from '@angular/forms';  
 import { ServicoBackComponent } from '../servico-back/servico-back.service';
-import { Observable } from 'rxjs';
+import { Observable, single } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Veiculo, vinVeiculos } from '../../models/veiculo.model'
 
@@ -17,16 +17,43 @@ import { Veiculo, vinVeiculos } from '../../models/veiculo.model'
 export class DashboardComponent implements OnInit {
   private _home: any;
   vehicles: Veiculo[] = [];
-  vinVeiculos!: vinVeiculos;
+  vinVeiculos: vinVeiculos[] = [];
   selectForm!: Veiculo; 
   termoBusca: string = '';
   dropdownWidth: string = 'auto';
+  carSelecionado = signal<Veiculo | null>(null);
+  vinSelecionado = signal<vinVeiculos | null>(null);
+  pesquisaVin: string | any;
 
 constructor(private router:Router, private servicoBack: ServicoBackComponent){}
 
 selectCar = new FormGroup({
   selectedCar: new FormControl<string |number | null>(null)
 });
+
+
+  
+mudarcarro(carroAtual: string){
+   const found = this.vehicles.find(v => v.id == Number(carroAtual));
+   this.carSelecionado.set(found!)
+}
+
+mudarVin(vinAtual: string){
+  const vinVeiculo = this.vinVeiculos.find(v => v.id == Number(vinAtual));
+  this.vinSelecionado.set(vinVeiculo!);
+}
+
+pesquisarVin(vin: string){
+  this.servicoBack.api_vin(vin).subscribe({
+    next: resp => {
+      this.vinSelecionado.set(resp)
+    },
+    error: err => {
+      
+    }
+  })
+  
+}
 
 ngOnInit(): void {
   this.menu();
@@ -46,10 +73,10 @@ pesquisarCarros(): void {
     }
   });
 
-  // this.selectCar.controls.selectedCar.valueChanges.subscribe(id =>{
-  //   const found = this.vehicles.find(v => v.id == id);
-  //   if(found) this.selectForm = found;
-  // })
+  this.selectCar.controls.selectedCar.valueChanges.subscribe(id =>{
+    const found = this.vehicles.find(v => v.id == id);
+    if(found) {this.selectForm = found};
+  })
 }
 
 
