@@ -41,7 +41,6 @@ pesquisarVin(vin: string){
   this.servicoBack.api_vin(vin).subscribe({
     next: resp => {
       this.vinSelecionado.set(resp)
-      console.log(this.vinSelecionado())
     }, error: err => {console.log(err)}
   })
   
@@ -56,9 +55,7 @@ ngOnInit(): void {
 pesquisarCarros(): void {
    this.servicoBack.api_Carro().subscribe({
     next: (data: any) => {
-      console.log('Dados recebidos:', data);
       this.vehicles = data.vehicles;
-      console.log('Veículos após atribuição:', this.vehicles);
     },
     error: (err) => {
       console.error('Erro ao carregar carros:', err);

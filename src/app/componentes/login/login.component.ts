@@ -53,7 +53,6 @@ export class LoginComponent implements OnInit{
    
     validacao.subscribe({ next:(resposta)=> {if(resposta.id){
      const infoLogin = resposta;
-     console.log(resposta)
       this.router.navigateByUrl('/home', { state: resposta });
       erro.forEach((elemento) => {
         elemento.innerHTML = '';
@@ -62,7 +61,6 @@ export class LoginComponent implements OnInit{
           
             if(this.auto_login.value){
             localStorage.setItem('loginperfil',JSON.stringify (resposta));
-            console.log(this.auto_login.value);
             
           }else{
             sessionStorage.setItem("loginperfil", JSON.stringify (resposta));
