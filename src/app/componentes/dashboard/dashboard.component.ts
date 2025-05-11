@@ -37,16 +37,12 @@ mudarcarro(carroAtual: string){
    this.carSelecionado.set(found!)
 }
 
-mudarVin(vinAtual: string){
-  const vinVeiculo = this.vinVeiculos.find(v => v.id == Number(vinAtual));
-  this.vinSelecionado.set(vinVeiculo!);
-}
-
 pesquisarVin(vin: string){
   this.servicoBack.api_vin(vin).subscribe({
     next: resp => {
       this.vinSelecionado.set(resp)
-    }
+      console.log(this.vinSelecionado())
+    }, error: err => {console.log(err)}
   })
   
 }

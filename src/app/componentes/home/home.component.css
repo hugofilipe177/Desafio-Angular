@@ -88,7 +88,7 @@ button span{
     pointer-events: none;
 }
 .modal-content{
-    background-color: rgba(212, 215, 232, 0.438);
+    background-color: rgba(212, 215, 232, 0.59);
     border: none;
     box-shadow: none;
     width: 60vh;
@@ -104,5 +104,8 @@ button span{
     width: 100%;
 }
 #bem_vindo{
+    color: rgb(45, 45, 192);
+} 
+#email{
     color: rgb(45, 45, 192);
 }

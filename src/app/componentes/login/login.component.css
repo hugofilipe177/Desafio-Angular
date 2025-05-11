@@ -54,12 +54,11 @@ form .login:focus{
 }
 #checkbox{
     padding-top: 5%;
-    margin-left: 27%;
     font-size: small;
     color: black;
     display: flex; 
+    width: 49vh;
     justify-content: end; 
-    width: 34%;
 }
 #login-auto{
     scale: 1.5;
@@ -128,13 +127,13 @@ i{
 }
 #div_nome{
     display: flex; 
-    width: 100%; 
+    width:fit-content;
     align-items: center; 
     justify-content: center;
 }
 #div_senha{
     display: flex; 
-    width: 67%;
+    width: fit-content;
     position: relative; 
     align-items: center; 
     justify-content: center; 
@@ -143,7 +142,4 @@ i{
 .label_input{
     color: rgb(46, 46, 209); 
     margin-right:2%
-}
-#senha{
-    width: 100%;
 }
