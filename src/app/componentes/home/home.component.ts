@@ -1,62 +1,35 @@
-import { Component, Input, input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from '../../models/usuario.model';
+import { HeaderComponent } from '../header/header.component';
+
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  infoLogin = { nome: '', email: '' };
-  nome: string | any;
-  email:string | any;
+  perfilData: Usuario | null = null;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void { 
-    this.menu();
-    this.transferencias();
     this.modal();
+    this.perfil();
   }
- perfil(){
-  const Perfil = this.infoLogin;
- }
-
-  menu() {
-    const menu_aparecer = document.getElementById('botao');
-    const offcanvas_base = document.getElementById('menuLateral');
-    const offcanvas = new (window as any).bootstrap.Offcanvas(offcanvas_base);
-    let aberto = false;
-
-   
-    menu_aparecer?.addEventListener('click', () => {
-      if(aberto){
-        offcanvas.hide()
-       
-      } else{
-        offcanvas.show();
+  perfil():void {
+    const login = 'loginperfil';
+    const storedData = sessionStorage.getItem(login) || localStorage.getItem(login);
+    
+    if(storedData) {
+      try {
+        this.perfilData = JSON.parse(storedData);
+      } catch (e) {
+        this.perfilData = null;
       }
-      offcanvas_base?.addEventListener('hidden.bs.offcanvas', ()=>{ 
-        aberto = false;
-      })
-      
-    });
-  
-  }  
-  transferencias(){
-    const sair = document.querySelector('#logout');
-    const dashboard = document.getElementById('dash');
-    const home = document.getElementById('home')
-    sair?.addEventListener('click', () =>{
-      this.router.navigateByUrl('/')
-    })
-    dashboard?.addEventListener('click',()=>{
-      this.router.navigateByUrl('/dashboard', { state:this.infoLogin })
-    })
-    home?.addEventListener('click', ()=> {
-      this.router.navigateByUrl('/home')
-    })  
+    }
   }
   modal(){
       const abrir_modal = new (window as any).bootstrap.Modal(document.getElementById('modal'),

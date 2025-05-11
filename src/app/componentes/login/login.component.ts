@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, inject, Input, input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ServicoBackComponent } from '../servico-back/servico-back.service';
@@ -29,24 +29,10 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void { 
     this.nome.valueChanges.subscribe(() => this.alteração_cor());
     this.senha.valueChanges.subscribe(() => this.alteração_cor());
-
-    
-  }
-
-  updateName(field: FormControl, fieldName: string): string {
-    if(!this.nome.value || this.senha.value === ''){
-      return `Por favor, digite ${fieldName}`;
-    }
-   return ''; 
-  }
-  atualizarErro(){
-    this.nomeErro = this.updateName(this.nome, 'seu Nome');
-    this.senhaErro = this.updateName(this.senha, 'sua Senha');
   }
   alteração_cor(){
     const nome = this.nome.value || '';
-    const botao_submit = document.querySelector('#botao_submit')
-    const validacao = this.servico.api_login(this.nome.value ,this.senha.value);    
+    const botao_submit = document.querySelector('#botao_submit')  
     const senhaValue = this.senha.value || '';
 
     if(senhaValue.length >= 5 && nome.length >= 4 ){
@@ -59,8 +45,6 @@ export class LoginComponent implements OnInit{
 }
   checkarLogin() {
     const erro = document.querySelectorAll('.erro');
-    const nome = this.nome.value || '';
-    const botao_submit = document.querySelector('#botao_submit')
     const validacao = this.servico.api_login(this.nome.value ,this.senha.value);    
     const senhaValue = this.senha.value || '';
     if (senhaValue.length < 5) {
@@ -77,11 +61,11 @@ export class LoginComponent implements OnInit{
         }
           
             if(this.auto_login.value){
-            localStorage.setItem('local_storage',JSON.stringify (resposta));
+            localStorage.setItem('loginperfil',JSON.stringify (resposta));
             console.log(this.auto_login.value);
             
           }else{
-            sessionStorage.setItem("session_storage", JSON.stringify (resposta))
+            sessionStorage.setItem("loginperfil", JSON.stringify (resposta));
             }
       }, error: (error) => {
         if(error.error && error.error.message){

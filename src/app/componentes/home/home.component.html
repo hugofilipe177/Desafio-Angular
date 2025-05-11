@@ -1,36 +1,4 @@
-<header>
-    <button id="botao">
-    <span></span>
-    <span></span>
-    <span></span>
-    </button>
-
-    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
-        <div class="offcanvas-body">
-            <div id="logoford">
-                <img src="/ArquivosDeSuporteDesafioAngular/img/ford.png" alt="Logo Ford">
-            </div>
-            <p></p>
-            <p class="btn btn-outline-dark w-100 mb-2 " id="home">Home</p>
-            <p class="btn btn-outline-dark w-100 mb-2" id="dash">Dashboard</p>
-          </div>
-        </div>    
-    <div class="dropdown text-end" id="div_perfil">
-        <a class="d-block link-dark text-decoration-none dropdown-toggle" aria-expanded="false">
-        <img src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000" alt="imagem perfil" id="perfil">
-        </a>
-        
-        <ul class="dropdown-menu dropdown-menu-start text-small">
-            <li><h5 class="dropdown-header">Login</h5></li>
-            <li><h6 class="dropdown-item info">Nome: {{ infoLogin.nome }}</h6></li>
-            <li><h6 class="dropdown-item info">Email: {{ infoLogin.email }}</h6></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><button class="dropdown-item" id="logout">logout</button></li>
-          </ul>
-      </div>
-      
-      
-</header>
+<app-header></app-header>
 <main>
     <div class="modal fade" tabindex="-1" id="modal">
         <div class="modal-dialog">
@@ -40,7 +8,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body">
-              <p>Seja bem vindo(a)</p>
+              <p id="bem_vindo">Seja bem vindo(a) {{ perfilData?.nome }}!  </p> <p id="email">Email: {{ perfilData?.email }}</p>
             </div>
           </div>
         </div>

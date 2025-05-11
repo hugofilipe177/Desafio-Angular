@@ -12,22 +12,22 @@
 
     <p>Bem-Vindo</p>
     <form action="">
-        <div style="display: flex; width: 100%; align-items: center; justify-content: center;">
-            <label for="nome" style="color: rgb(46, 46, 209); margin-right: 2%;">Nome: </label>
+        <div id="div_nome">
+            <label for="nome" class="label_input">Nome: </label>
             <input type="text" name='nome' class="login" placeholder="João..."  [formControl]="nome" id="nome" required>
         </div>
         <div class="erros">
             <span class="erro"> {{ nomeErro }}</span>
         </div>
-        <div style="display: flex; position: relative; align-items: center; justify-content: center; margin-top: 2%;">
-            <label for="senha" style="color: rgb(46, 46, 209); margin-right:2%">Senha: </label> 
+        <div id="div_senha">
+            <label for="senha" class="label_input">Senha:  </label> 
             <input   [type]="mostrar_Senha ? 'text' : 'password'"  name= 'Senha' class="login" [formControl]='senha' id="senha" placeholder="1234..." required>
             <i class="fa-solid senha_visivel"(click)="senha_visivel()" [class.fa-eye-slash]="!mostrar_Senha" [class.fa-eye]="mostrar_Senha"></i>
         </div> 
         <div class="erros">
             <span class="erro"> {{ senhaErro }}</span>
         </div>
-        <section id="checkbox" style="display: flex; justify-content: end; width: 34%;">
+        <section id="checkbox">
             <div class="form-check form-switch mb-3" style="flex-direction: row-reverse; display: flex;">
                 <input class="form-check-input" type="checkbox" role="switch" id="toggleSwitch" [formControl]="auto_login">
                 <label class="form-check-label" for="toggleSwitch">logar automático</label>

@@ -2,20 +2,19 @@ import { Component, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule }     from '@angular/forms';  
 import { ServicoBackComponent } from '../servico-back/servico-back.service';
-import { Observable, single } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Veiculo, vinVeiculos } from '../../models/veiculo.model'
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
   standalone: true,
   selector: 'app-dashboard',
-  imports: [ CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [ CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
-  private _home: any;
   vehicles: Veiculo[] = [];
   vinVeiculos: vinVeiculos[] = [];
   selectForm!: Veiculo; 
@@ -47,9 +46,6 @@ pesquisarVin(vin: string){
   this.servicoBack.api_vin(vin).subscribe({
     next: resp => {
       this.vinSelecionado.set(resp)
-    },
-    error: err => {
-      
     }
   })
   

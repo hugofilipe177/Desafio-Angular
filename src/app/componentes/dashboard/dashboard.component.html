@@ -1,39 +1,4 @@
-<header>
-    <button id="botao">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="menuLateral"
-        aria-labelledby="menuLateralLabel">
-        <div class="offcanvas-body">
-            <div id="logoford">
-                <img src="/ArquivosDeSuporteDesafioAngular/img/ford.png" alt="Logo Ford">
-            </div>
-            <p></p>
-            <p class="btn btn-outline-dark w-100 mb-2 " id="home">Home</p>
-            <p class="btn btn-outline-dark w-100 mb-2" id="dash">Dashboard</p>
-        </div>
-    </div>
-    <div class="dropdown text-end" id="div_perfil">
-        <a class="d-block link-dark text-decoration-none dropdown-toggle" aria-expanded="false">
-            <img src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000" alt="imagem perfil" id="perfil">
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-start text-small">
-            <li>
-                <h5 class="dropdown-header">Login</h5>
-            </li>
-
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-            <li><button class="dropdown-item" id="logout">logout</button></li>
-        </ul>
-    </div>
-</header>
-
+<app-header></app-header>
 <main>
     <div id="container-main">
         <div class="container mt-4">
@@ -88,11 +53,12 @@
         <div class="container-fluid justify-content-center align-items-center d-flex flex-fill">
             <img  id="foto_carros" class="img-fluid w-50" [src]="carSelecionado()?.img" alt="">
         </div>
+        <br><br>
 
         <div class="table-responsive">
             <table class="table">
-                <thead >
-                    <tr >
+                <thead>
+                    <tr>
                         <th scope="col" class="vin-cima"> código-Vin </th>
                         <th scope="col" class="vin-cima"> Odometro </th>
                         <th scope="col" class="vin-cima"> Nivel de combustivel </th>

@@ -10,13 +10,6 @@ header img {
     margin-right: 2%;
 }
 
-main {
-    height: 93vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #mini_menu {
     transition: all 0.3s ease;
 }
@@ -99,10 +92,4 @@ button span{
 .modal-dialog{
     margin: 0;
     margin-left: 35%;
-}
-#foto_carro{
-    width: 100%;
-}
-#bem_vindo{
-    color: rgb(45, 45, 192);
 }
