@@ -1,0 +1,15 @@
+<div id="container-carousel">
+    <div id="Carousel-info">
+    <div *ngFor="let item of displayItems" id="div_itens">
+            <div class="imagem" id="div_imagem">
+                <img [src]="item.img" [alt]="item.titulo">
+            </div>
+            <div class="nome">
+                {{ item.titulo}}
+            </div>
+            <div class="Texto">
+                {{item.descricao}}
+            </div>
+        </div>
+    </div>
+</div>

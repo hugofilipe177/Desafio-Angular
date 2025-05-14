@@ -160,7 +160,58 @@ app.post("/vehicleData", (req, res) => {
       message: "Falha na comunicação com o servidor!",
     });
   }
+}); 
+
+app.get("/carousel", (req, res) => {
+  try {
+    const carouselImages = [
+      {
+        id: 1,
+        titulo: "Nova Ranger 2025",
+        descricao: "Potência e inovação em cada curva.",
+        img: "http://localhost:3001/img/ranger.png",
+      },
+      {
+        id: 2,
+        titulo: "Mustang GT",
+        descricao: "Desempenho e elegância que impressionam.",
+        img: "http://localhost:3001/img/mustang.png",
+      },
+      {
+        id: 3,
+        titulo: "Territory 2025",
+        descricao: "Tecnologia, conforto e segurança para a família.",
+        img: "http://localhost:3001/img/territory.png",
+      },
+      {
+        id: 4,
+        titulo: "Bronco Sport",
+        descricao: "Aventure-se com estilo e força.",
+        img: "http://localhost:3001/img/broncoSport.png",
+      },
+      {
+        id: 5,
+        titulo: "Ranger",
+        descricao: "Aventure-se com estilo e força.",
+        img: "http://localhost:3001/img/imagem_1.jpg",
+      },
+      {
+        id: 6,
+        titulo: "Bronco Vermelho",
+        descricao: "Aventure-se com estilo e força.",
+        img: "http://localhost:3001/img/imagem_3.jpg",
+      },
+    ];
+
+    return res.status(200).json({ carousel: carouselImages });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Erro ao carregar imagens do carrossel.",
+      error: String(error),
+    });
+  }
 });
+
 
 app.listen(3001, () => {
   console.log("API running on http://localhost:3001/");

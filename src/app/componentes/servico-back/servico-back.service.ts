@@ -31,5 +31,8 @@ api_Carro(): Observable<any>{
 api_vin(vin:string):Observable<vinVeiculos>{
   return this.http.post<vinVeiculos>('http://localhost:3001/vehicleData', {vin} );
 }
+api_carousel(): Observable<any>{
+  return this.http.get('http://localhost:3001/carousel');
+}
 }
 
