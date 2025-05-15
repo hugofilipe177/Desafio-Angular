@@ -34,17 +34,19 @@ export class ComparadorCarrosComponent implements OnInit {
     
 
   } 
-  checkbox(event: Event, item: Comparador){
+  checkbox(event: Event, item: Comparador) {
     const checked = (event.target as HTMLInputElement).checked;
-    if(checked){
-      this.itemSelecionado.push(item);
-    }else{
-      this.itemSelecionado = this.itemSelecionado.filter(i=> i.id !== item.id);
+    if (checked) {
+      if (!this.itemSelecionado.some(i => i.id === item.id)) {
+        this.itemSelecionado.push(item);
+      }
+    } else {
+      this.itemSelecionado = this.itemSelecionado.filter(i => i.id !== item.id);
     }
-    console.log(this.itemSelecionado);
-  }
-  selecionado(item:Comparador){
-    return this.itemSelecionado.some(i=> i.id === item.id)
+    console.log('Selecionados:', this.itemSelecionado);
   }
 
+  selecionado(item: Comparador): boolean {
+    return this.itemSelecionado.some(i => i.id === item.id);
+  }
 }

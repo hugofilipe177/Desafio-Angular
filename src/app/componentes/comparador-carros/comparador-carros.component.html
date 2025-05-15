@@ -7,7 +7,7 @@
             <img [src]="item.img" alt="Imagem do veículo">
             <div id="container_selecao">
                 <p>{{ item.nome }}</p>
-                <input type="checkbox" [id]="item.id" [checked]="itemSelecionado" (change)="checkbox($event,item)">
+                <input type="checkbox" [id]="'chk' + item.id" [checked]="selecionado(item)" (change)="checkbox($event, item)">
             </div>
         </div>
     </div>
