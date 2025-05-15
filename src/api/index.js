@@ -211,6 +211,87 @@ app.get("/carousel", (req, res) => {
     });
   }
 });
+app.get("/vehicleSpecs", (req, res) => {
+  try {
+    const specs = [
+      {
+        id: 1,
+        nome: "Ford Ranger XL 2025",
+        preco: "R$ 244.990",
+        alturaVeiculo: "1.884 mm",
+        alturaSolo: "235 mm",
+        motor: "2.0 Diesel, 4 cilindros, 16 válvulas",
+        potencia: "170 cv a 3.500 rpm",
+        roda: "Aço 16, pneus 255/70 R16",
+        img: "http://localhost:3001/img/ranger.png"
+      },
+      {
+        id: 2,
+        nome: "Ford Mustang GT 2025",
+        preco: "R$ 529.000",
+        alturaVeiculo: "1.398 mm",
+        alturaSolo: "144 mm",
+        motor: "5.0 V8 a gasolina",
+        potencia: "488 cv",
+        roda: "Liga de alumínio, dianteiras 9J x 19, traseiras 9,5J x 19",
+        img: "http://localhost:3001/img/mustang.png"
+      },
+      {
+        id: 3,
+        nome: "Ford Territory 2025",
+        preco: "R$ 212.000",
+        alturaVeiculo: "1.706 mm",
+        alturaSolo: "179 mm",
+        motor: "1.5 Turbo a gasolina",
+        potencia: "169 cv a 5.500 rpm",
+        roda: "Liga leve 19, pneus 235/50 R19",
+        img: "http://localhost:3001/img/territory.png"
+      },
+      {
+        id: 4,
+        nome: "Ford Bronco Sport Wildtrak",
+        preco: "R$ 256.900",
+        alturaVeiculo: "1.813 mm",
+        alturaSolo: "223 mm",
+        motor: "2.0 Turbo a gasolina",
+        potencia: "240 cv a 5.500 rpm",
+        roda: "Liga leve 17, pneus 225/65 R17",
+        img: "http://localhost:3001/img/broncoSport.png"
+      },
+      {
+        id: 5,
+        nome: "Ford Ranger 2.5 CD Limited",
+        preco: "R$ 244.990",
+        alturaVeiculo: "1.848 mm",
+        alturaSolo: "232 mm",
+        motor: "2.5 Flex (álcool/gasolina)",
+        potencia: "173 cv (álcool) / 168 cv (gasolina)",
+        roda: "Liga leve aro 18, pneus 265/60 R18",
+        img: "http://localhost:3001/img/imagem_1.jpg"
+      },
+      {
+        id: 6,
+        nome: "Ford Bronco Vermelho (Wildtrak)",
+        preco: "R$ 256.900",
+        alturaVeiculo: "1.813 mm",
+        alturaSolo: "223 mm",
+        motor: "2.0 Turbo a gasolina",
+        potencia: "240 cv a 5.500 rpm",
+        roda: "Liga leve 17, pneus 225/65 R17",
+        img: "http://localhost:3001/img/imagem_3.jpg"
+      },
+    ];
+
+    return res.status(200).json({ specs });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Erro ao recuperar especificações dos veículos.",
+      error: String(error),
+    });
+  }
+});
+
+
 
 
 app.listen(3001, () => {

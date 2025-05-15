@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../../models/usuario.model';
 import { HeaderComponent } from '../header/header.component';
+import { CarouselComponent } from "../carousel/carousel.component";
 
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

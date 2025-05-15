@@ -109,3 +109,24 @@ button span{
 #email{
     color: rgb(45, 45, 192);
 }
+#container-carousel{
+    height: 50vh;
+}
+#container-carousel::before, #container-carousel::after{
+    background: linear-gradient(to right, rgba(255,255,255,1)0%, rgba(255,255,255,0) 100%);
+    content: '';
+    height: 40%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+#container-carousel::before{
+    left: 0;
+    top: 30vh;
+}
+#container-carousel::after{
+    right: 0;
+    top: 30vh;
+    transform: rotateZ(180deg);
+}

@@ -3,6 +3,7 @@ import { CarouselInt } from '../../models/carousel';
 import { ServicoBackComponent } from '../servico-back/servico-back.service';
 import { CommonModule } from '@angular/common';
 import { catchError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -13,8 +14,9 @@ import { catchError } from 'rxjs';
 export class CarouselComponent implements OnInit{
   Carousel: CarouselInt[]=[];
   displayItems: CarouselInt[]=[];
+  router: any;
 
-  constructor(private servicoBack: ServicoBackComponent){}
+  constructor(private servicoBack: ServicoBackComponent, private route: Router ){}
   ngOnInit(): void {
     this.CarouselFun();
   }
@@ -31,6 +33,9 @@ export class CarouselComponent implements OnInit{
         console.log('este é o erro:', err);
       }
     })
+  }
+  Transferencia(){
+    this.route.navigateByUrl('/dashboard')
   }
 
 

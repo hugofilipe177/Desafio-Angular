@@ -1,0 +1,29 @@
+main{
+    height: 100%;
+    display: flex;
+}
+#container_comparador{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.carros{
+    height: 30%;
+    justify-content: center;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+img{
+    width: 100%;
+}
+#container_selecao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -34,5 +34,8 @@ api_vin(vin:string):Observable<vinVeiculos>{
 api_carousel(): Observable<any>{
   return this.http.get('http://localhost:3001/carousel');
 }
+api_comparador(): Observable<any>{
+  return this.http.get('http://localhost:3001/vehicleSpecs');
+}
 }
 

@@ -4,13 +4,14 @@ body{
     place-items: center;
 }
 #container-carousel{
-    height: 250px;
+    height: 40vh;
     margin:auto;
     position: relative;
     width:90%;
     display: grid;
     place-items: center;
     overflow: hidden;
+    text-align: center;
     
 }
 #Carousel-info{
@@ -26,11 +27,11 @@ body{
 }
 #div_imagem{
     height: 200px;
-    width: 250px;
+    width: 55vh;
     display: flex;
     align-items: center;
     padding: 15px;
-    perspective: 100px;
+    perspective: 200px;
 }
 img{
     width: 100%;
