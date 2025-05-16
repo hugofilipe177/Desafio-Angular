@@ -71,5 +71,8 @@ transferencias(){
     this.router.navigateByUrl('/home')
   })  
 }
+comparador(){
+  this.router.navigateByUrl('/comparadordecarros');
+}
 }
 

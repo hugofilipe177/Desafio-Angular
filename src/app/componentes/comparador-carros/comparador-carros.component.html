@@ -4,10 +4,12 @@
 <main>
     <div id="container_comparador">
         <div *ngFor="let item of comparador" class="carros">
+            <div id="imagem_carro">
             <img [src]="item.img" alt="Imagem do veículo">
+            </div>
             <div id="container_selecao">
                 <p>{{ item.nome }}</p>
-                <input type="checkbox" [id]="'chk' + item.id" [checked]="selecionado(item)" (change)="checkbox($event, item)">
+                <input type="checkbox" [id]="'chk' + item.id" [checked]="selecionado(item)" (change)="checkbox($event, item)" [disabled]="!selecionado(item) && itemSelecionado.length >=2">
             </div>
         </div>
     </div>

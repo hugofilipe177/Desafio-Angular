@@ -36,6 +36,12 @@ export class ComparadorCarrosComponent implements OnInit {
   } 
   checkbox(event: Event, item: Comparador) {
     const checked = (event.target as HTMLInputElement).checked;
+    if(checked){
+      if(this.itemSelecionado.length >= 2){
+        (event.target as HTMLInputElement).checked = false;
+        alert('voce')
+      }
+    }
     if (checked) {
       if (!this.itemSelecionado.some(i => i.id === item.id)) {
         this.itemSelecionado.push(item);
