@@ -115,7 +115,7 @@ button span{
 #container-carousel::before, #container-carousel::after{
     background: linear-gradient(to right, rgba(255,255,255,1)0%, rgba(255,255,255,0) 100%);
     content: '';
-    height: 40%;
+    height: 45%;
     position: absolute;
     width: 15%;
     z-index: 2;

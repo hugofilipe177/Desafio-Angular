@@ -24,8 +24,33 @@ main {
     flex-direction: column;
     height: 100%;
     width: 100%;
-}
 
+}
+/* #realocacao{
+    height: 90vh;
+    background-image: url('/ArquivosDeSuporteDesafioAngular/img/background.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+#conected{       
+    background-color: rgb(244, 247, 30);
+    border-radius: 10px;
+    border: none;
+
+}
+#vendas{
+    background-color: rgb(83, 83, 212);
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+#software{
+    background-color: rgb(236, 45, 45);
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
 .separacao{
     display: block;
     position:relative;

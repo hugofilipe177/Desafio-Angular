@@ -90,6 +90,7 @@ form .login:focus{
     border-radius: 10px;
     border-color: rgb(55, 79, 213);
     background-color: rgb(33, 43, 156);
+    color: #93a3db;
 }
 .botao_certo:hover{
     transform: scale(1.05);
