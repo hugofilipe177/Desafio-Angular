@@ -12,5 +12,8 @@
                 <input type="checkbox" [id]="'chk' + item.id" [checked]="selecionado(item)" (change)="checkbox($event, item)" [disabled]="!selecionado(item) && itemSelecionado.length >=2">
             </div>
         </div>
+        <div id="div_botao">
+        <input type="button" id="botao_envio" placeholder="Comparar" >
+    </div>
     </div>
 </main>
