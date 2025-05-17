@@ -20,7 +20,7 @@ app.post("/login", async (req, res) => {
       });
     }
 
-    if (nome !== "admin" || senha !== "123456") {
+    if (nome !== "Hugo" || senha !== "123456") {
       return res.status(401).json({
         message:
           "O nome de usuário ou senha está incorreto ou não foi cadastrado!",
@@ -29,8 +29,8 @@ app.post("/login", async (req, res) => {
 
     return res.status(200).json({
       id: 1,
-      nome: "admin",
-      email: "admin@email.com",
+      nome: "Hugo",
+      email: "Hugo@email.com",
     });
   } catch (error) {
     return res.status(500).json({

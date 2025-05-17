@@ -1,41 +1,45 @@
-    <div id="itens_all">
-
-    <div id="carro1">
-        <img src="http://localhost:3001/img/ranger.png" alt="Carro Ranger" id="foto_carro">
+<body>
+    <div class="container login-container">
+        <div class="login-card">
+            <div class="card-header">
+                <img src="/ArquivosDeSuporteDesafioAngular/img/ford.png" class="w-50" alt="Logo Ford">
+                <p class="mb-0">Bem Vindo!</p>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Nome</label>
+                        <div class="input-group">
+                            <span class="input-group-text "><i class="fas fa-envelope"></i></span>
+                            <input type="text" class="form-control login" id="nome" placeholder="coloque seu nome"  [formControl]="nome" id="nome" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input [type]="mostrar_Senha ? 'text' : 'password'"  name= 'Senha' class="form-control login .text-black-50" [formControl]='senha' id="senha"  placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex justify-content-between align-items-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                    </div>
+                          <input type="button" value="Logar" class="botao_errado btn btn-primary mb-4"  id="botao_submit" (click)="checkarLogin()">
+                    
+                    <div class="divider">
+                        <span class="divider-text">Redes Sociais</span>
+                    </div>
+                    
+                    <div class="social-btn">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/fordbrasil/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-apple"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-   <div id="area_login">
-<header> 
-    <img src="/ArquivosDeSuporteDesafioAngular/img/logo2.png" alt="Logo Ford" id="logoford">
-</header>
-
-<main>
-
-    <p>Bem-Vindo</p>
-    <form action="">
-        <div id="div_nome">
-            <label for="nome" class="label_input">Nome: </label>
-            <input type="text" name='nome' class="login" placeholder="João..."  [formControl]="nome" id="nome" required>
-        </div>
-        <div class="erros">
-            <span class="erro"> {{ nomeErro }}</span>
-        </div>
-        <div id="div_senha">
-            <label for="senha" class="label_input">Senha:  </label> 
-            <input   [type]="mostrar_Senha ? 'text' : 'password'"  name= 'Senha' class="login" [formControl]='senha' id="senha" placeholder="1234..." required>
-            <i class="fa-solid senha_visivel"(click)="senha_visivel()" [class.fa-eye-slash]="!mostrar_Senha" [class.fa-eye]="mostrar_Senha"></i>
-        </div> 
-        <div class="erros">
-            <span class="erro"> {{ senhaErro }}</span>
-        </div>
-        <section id="checkbox">
-            <div class="form-check form-switch mb-3" style="flex-direction: row-reverse; display: flex; padding: 0%; width: 100%;">
-                <input class="form-check-input" type="checkbox" role="switch" id="toggleSwitch" [formControl]="auto_login">
-                <label class="form-check-label" for="toggleSwitch">logar automático</label>
-              </div>
-        </section>
-        <span *ngIf="mensagemErro" class="erro"> {{ mensagemErro }}</span>
-        <input type="button" value="Logar" class="botao_errado"  id="botao_submit" (click)="checkarLogin()" Ngif>
-    </form>
-</main>
-</div>
-</div>
+</body>
