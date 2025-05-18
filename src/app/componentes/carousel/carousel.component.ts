@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CarouselInt } from '../../models/carousel';
 import { ServicoBackComponent } from '../servico-back/servico-back.service';
 import { CommonModule } from '@angular/common';
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
+  standalone: true, 
   imports: [CommonModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
@@ -15,6 +16,7 @@ export class CarouselComponent implements OnInit{
   Carousel: CarouselInt[]=[];
   displayItems: CarouselInt[]=[];
   router: any;
+ @Input() items: CarouselInt[] = [];
 
   constructor(private servicoBack: ServicoBackComponent, private route: Router ){}
   ngOnInit(): void {

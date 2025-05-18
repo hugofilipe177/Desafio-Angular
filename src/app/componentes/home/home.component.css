@@ -1,4 +1,4 @@
-header {
+/* header {
     margin-top: 1%;
     display: flex;
     justify-content: space-between;
@@ -129,4 +129,89 @@ button span{
     right: 0;
     top: 30vh;
     transform: rotateZ(180deg);
-}
+} */
+
+     :root {
+            --ford-blue: #00274C;
+            --ford-orange: #FFCB05;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 56px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+        
+        #botao {
+            border: none;
+            background: none;
+            padding: 5px;
+        }
+        
+        #botao span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color:#00274C;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        #logoford img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        #div_perfil {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        
+        #perfil {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .offcanvas-start {
+            width: 250px;
+        }
+        
+        
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .card {
+            transition: transform 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn-ford {
+            background-color: #FFCB05;
+            color: #00274C;
+            font-weight: 600;
+        }
+        
+        .btn-ford:hover {
+            background-color: #e6b800;
+            color: #00274C;
+        }
+        
+       
