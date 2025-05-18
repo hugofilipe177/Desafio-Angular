@@ -1,12 +1,14 @@
 <div id="container-carousel">
     <div id="Carousel-info" (click)="Transferencia()">
     <div *ngFor="let item of displayItems" id="div_itens">
+        <a href="dashboard" id="transferencia">
             <div class="imagem" id="div_imagem" >
                 <img [src]="item.img" [alt]="item.titulo">
             </div>
             <div class="nome">
                 {{ item.titulo}}
             </div>
+        </a>
             <div class="Texto">
                 {{item.descricao}}
             </div>
