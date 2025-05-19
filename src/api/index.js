@@ -50,6 +50,10 @@ app.get("/vehicles", (req, res) => {
         connected: 70000,
         softwareUpdates: 27550,
         img: "http://localhost:3001/img/ranger.png",
+        preco: "R$ 244.990",
+        motor: "2.0 Diesel, 4 cilindros, 16 válvulas",
+        potencia: "170 cv a 3.500 rpm",
+        roda: "Aço 16, pneus 255/70 R16"
       },
       {
         id: 2,
@@ -58,6 +62,11 @@ app.get("/vehicles", (req, res) => {
         connected: 500,
         softwareUpdates: 750,
         img: "http://localhost:3001/img/mustang.png",
+        preco: "R$ 529.000",
+        motor: "5.0 V8 a gasolina",
+        potencia: "488 cv",
+        roda: "Liga de alumínio, dianteiras 9J x 19, traseiras 9,5J x 19",
+        
       },
       {
         id: 3,
@@ -66,6 +75,10 @@ app.get("/vehicles", (req, res) => {
         connected: 4000,
         softwareUpdates: 3050,
         img: "http://localhost:3001/img/territory.png",
+        preco: "R$ 212.000",
+        motor: "1.5 Turbo a gasolina",
+        potencia: "169 cv a 5.500 rpm",
+        roda: "Liga leve 19, pneus 235/50 R19"
       },
       {
         id: 4,
@@ -74,6 +87,10 @@ app.get("/vehicles", (req, res) => {
         connected: 4060,
         softwareUpdates: 2050,
         img: "http://localhost:3001/img/broncoSport.png",
+        preco: "R$ 256.900",
+        motor: "2.0 Turbo a gasolina",
+        potencia: "240 cv a 5.500 rpm",
+        roda: "Liga leve 17, pneus 225/65 R17"
       },
     ];
 

@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   displayItems: CarouselInt[]=[];
 
   ngOnInit(): void { 
-    this.modal();
+    // this.modal();
     this.perfil();
     this.loadCarousel();
   }
@@ -38,11 +38,11 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-  modal(){
-      const abrir_modal = new (window as any).bootstrap.Modal(document.getElementById('modal'),
-      { backdrop: false });
-      abrir_modal.show();
-  }
+  // modal(){
+  //     const abrir_modal = new (window as any).bootstrap.Modal(document.getElementById('modal'),
+  //     { backdrop: false });
+  //     abrir_modal.show();
+  // }
    loadCarousel(): void {
     this.servicoBack.api_carousel().subscribe({
       next: data => {
