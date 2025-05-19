@@ -1,6 +1,20 @@
- .container_footer {
-  background-color: #00274C;
+.container_footer {
+  background: linear-gradient(150deg, #00274C, #3e92cc, #00274C);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
   width: 100%;
   color: white;
   margin: 0;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

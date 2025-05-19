@@ -47,7 +47,6 @@ pesquisarVin(vin: string){
 }
 
 ngOnInit(): void {
-  this.transferencias();
   this.pesquisarCarros();
 }
 
@@ -66,19 +65,5 @@ pesquisarCarros(): void {
     if(found) {this.selectForm = found};
   })
 }
-  transferencias(){
-    const sair = document.querySelector('#logout');
-    const dashboard = document.getElementById('dash');
-    const home = document.getElementById('home')
-    sair?.addEventListener('click', () =>{
-      this.router.navigateByUrl('/')
-    })
-    dashboard?.addEventListener('click',()=>{
-
-    })
-    home?.addEventListener('click', ()=> {
-      this.router.navigateByUrl('/home')
-    })  
-  }
 }
 

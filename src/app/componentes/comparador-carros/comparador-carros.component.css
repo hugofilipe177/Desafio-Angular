@@ -1,4 +1,4 @@
-main{
+/* main{
     height: 100%;
     display: flex;
 }
@@ -26,4 +26,89 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+} */
+
+:root {
+    --primary-blue: #1a4b8c;
+    --dark-blue: #0d2b4e;
+    --light-blue: #e6f0ff;
+    --accent-blue: #3a7bd5;
+    --dark-gray: #2d3748;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+form{
+    margin-top: 1%;
+}
+
+.navbar-custom {
+    background-color: #1a4b8c;
+}
+
+.navbar-custom .navbar-brand, 
+.navbar-custom .nav-link {
+    color: white;
+}
+
+.card-custom {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: white;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+}
+
+.card-header-custom {
+    background-color: #1a4b8c;
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 15px;
+}
+
+.btn-primary-custom {
+    background-color: #3a7bd5;
+    border: none;
+}
+
+.btn-primary-custom:hover {
+    background-color: #1a4b8c;
+}
+
+.comparison-section {
+    background-color: #e6f0ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.spec-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.spec-item:last-child {
+    border-bottom: none;
+}
+
+.winner {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.car-image {
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.select-box {
+    border-left: 4px solid #3a7bd5;
+    background-color: white;
 }

@@ -11,14 +11,14 @@
                         <label for="email" class="form-label">Nome</label>
                         <div class="input-group">
                             <span class="input-group-text "><i class="fas fa-envelope"></i></span>
-                            <input type="text" class="form-control login" id="nome" placeholder="coloque seu nome"  [formControl]="nome" id="nome" required>
+                            <input type="text" class="form-control login mb-0" id="nome" placeholder="coloque seu nome"  [formControl]="nome" id="nome" required>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Senha</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                            <input [type]="mostrar_Senha ? 'text' : 'password'"  name= 'Senha' class="form-control login .text-black-50" [formControl]='senha' id="senha"  placeholder="Enter your password" required>
+                            <input [type]="mostrar_Senha ? 'text' : 'password'"  name= 'Senha' class="form-control login .text-black-50 mb-0" [formControl]='senha' id="senha"  placeholder="Enter your password" required>
                         </div>
                     </div>
                     <div class="mb-3 d-flex justify-content-between align-items-center">
