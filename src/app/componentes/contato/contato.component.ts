@@ -10,30 +10,51 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './contato.component.css'
 })
 export class ContatoComponent {
- contatoForm: FormGroup;
-  tipoSelecionado: 'email' | 'telefone' | '' = '';
+  contatoForm: FormGroup;
+  tipoSelecionado: 'email' | 'phone' | '' = '';
 
   constructor(private fb: FormBuilder) {
     this.contatoForm = this.fb.group({
       nome: ['', Validators.required],
       cpf: ['', Validators.required],
-      tipo: ['', Validators.required],
-      valor: ['', Validators.required],
-      categoria: ['', Validators.required],
-      sugestao: ['']
+      contactMethod: ['', Validators.required],
+      email: ['', []],
+      phone: ['', []],
+      contactReason: ['', Validators.required],
+      message: ['', Validators.required]
+    });
+
+    // Ajusta validações quando o método de contato muda
+    this.contatoForm.get('contactMethod')!.valueChanges.subscribe(method => {
+      this.tipoSelecionado = method;
+      const emailCtrl = this.contatoForm.get('email')!;
+      const phoneCtrl = this.contatoForm.get('phone')!;
+
+      if (method === 'email') {
+        emailCtrl.setValidators([Validators.required, Validators.email]);
+        phoneCtrl.clearValidators();
+      } else if (method === 'phone') {
+        phoneCtrl.setValidators([Validators.required]);
+        emailCtrl.clearValidators();
+      }
+
+      emailCtrl.updateValueAndValidity();
+      phoneCtrl.updateValueAndValidity();
     });
   }
 
   onTipoChange() {
-    this.tipoSelecionado = this.contatoForm.get('tipo')!.value;
-    this.contatoForm.get('valor')!.reset();
+    // Força disparo do valueChanges se necessário
+    const current = this.contatoForm.get('contactMethod')!.value;
+    this.contatoForm.get('contactMethod')!.setValue(current);
   }
 
   onSubmit() {
     if (this.contatoForm.valid) {
       console.log('Dados do formulário:', this.contatoForm.value);
+      // Aqui você pode enviar para a API via serviço
     } else {
-      console.warn('Formulário inválido:', this.contatoForm);
+      console.warn('Formulário inválido:', this.contatoForm.errors);
     }
   }
 
