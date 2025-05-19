@@ -4,6 +4,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { CarouselComponent } from './componentes/carousel/carousel.component';
 import { ComparadorCarrosComponent } from './componentes/comparador-carros/comparador-carros.component';
+import { ContatoComponent } from './componentes/contato/contato.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     { path:'home', component: HomeComponent},
     { path:'dashboard', component: DashboardComponent},
     {path:'', component: CarouselComponent},
-    { path:'comparadordecarros',  component: ComparadorCarrosComponent}
+    { path:'comparadordecarros',  component: ComparadorCarrosComponent},
+    { path:'contato', component: ContatoComponent}
 ];

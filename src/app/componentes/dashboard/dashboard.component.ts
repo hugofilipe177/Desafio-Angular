@@ -47,7 +47,6 @@ pesquisarVin(vin: string){
 }
 
 ngOnInit(): void {
-  this.menu();
   this.transferencias();
   this.pesquisarCarros();
 }
@@ -67,29 +66,6 @@ pesquisarCarros(): void {
     if(found) {this.selectForm = found};
   })
 }
-
-
-
-menu() {
-  const menu_aparecer = document.getElementById('botao');
-  const offcanvas_base = document.getElementById('menuLateral');
-  const offcanvas = new (window as any).bootstrap.Offcanvas(offcanvas_base);
-  let aberto = false;
-
-    menu_aparecer?.addEventListener('click', () => {
-      if(aberto){
-        offcanvas.hide()
-       
-      } else{
-        offcanvas.show();
-      }
-      offcanvas_base?.addEventListener('hidden.bs.offcanvas', ()=>{ 
-        aberto = false;
-      })
-      
-    });
-  
-  }  
   transferencias(){
     const sair = document.querySelector('#logout');
     const dashboard = document.getElementById('dash');

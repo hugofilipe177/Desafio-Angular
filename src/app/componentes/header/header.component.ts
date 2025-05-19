@@ -61,6 +61,8 @@ transferencias(){
   const sair = document.querySelector('#logout');
   const dashboard = document.getElementById('dash');
   const home = document.getElementById('home')
+  const comparador = document.getElementById('comparador');
+  const contato = document.getElementById('contato');
   sair?.addEventListener('click', () =>{
     this.router.navigateByUrl('/')
   })
@@ -70,6 +72,12 @@ transferencias(){
   home?.addEventListener('click', ()=> {
     this.router.navigateByUrl('/home')
   })  
+  comparador?.addEventListener('click', () => {
+    this.router.navigateByUrl('/comparadordecarros')
+  });
+  contato?.addEventListener('click', () => {
+    this.router.navigateByUrl('/contato')
+  });
 }
 }
 
