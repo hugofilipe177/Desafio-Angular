@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void { 
   this.perfil();
   this.menu();
-  this.transferencias();
+  // this.transferencias();
 }
   constructor(private router: Router) {}
 perfil():void {
@@ -57,30 +57,30 @@ menu() {
   });
 
 }  
-transferencias(){
-  const sair = document.querySelector('#logout');
-  const dashboard = document.getElementById('dash');
-  const home = document.getElementById('home')
-  const comparador = document.getElementById('comparador');
-  const contato = document.getElementById('contato');
-  sair?.addEventListener('click', () =>{
-    this.router.navigateByUrl('/')
-  })
-  dashboard?.addEventListener('click',()=>{
-    this.router.navigateByUrl('/dashboard')
-  })
-  home?.addEventListener('click', ()=> {
-    this.router.navigateByUrl('/home')
-  })  
-  comparador?.addEventListener('click', () => {
-    this.router.navigateByUrl('/comparadordecarros')
-  });
-  contato?.addEventListener('click', () => {
-    this.router.navigateByUrl('/contato')
-  });
-}
-comparador(){
-  this.router.navigateByUrl('/comparadordecarros');
-}
+// transferencias(){
+//   const sair = document.querySelector('#logout');
+//   const dashboard = document.getElementById('dash');
+//   const home = document.getElementById('home')
+//   const comparador = document.getElementById('comparador');
+//   const contato = document.getElementById('contato');
+//   sair?.addEventListener('click', () =>{
+//     this.router.navigateByUrl('/')
+//   })
+//   dashboard?.addEventListener('click',()=>{
+//     this.router.navigateByUrl('/dashboard')
+//   })
+//   home?.addEventListener('click', ()=> {
+//     this.router.navigateByUrl('/home')
+//   })  
+//   comparador?.addEventListener('click', () => {
+//     this.router.navigateByUrl('/comparadordecarros')
+//   });
+//   contato?.addEventListener('click', () => {
+//     this.router.navigateByUrl('/contato')
+//   });
+// }
+// comparador(){
+//   this.router.navigateByUrl('/comparadordecarros');
+// }
 }
 
