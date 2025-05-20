@@ -41,7 +41,7 @@ img:hover{
     transform: translateZ(20px);
 }
 .nome{
-    margin-top: 3%;
+    margin-top: 2%;
 }
 @keyframes scroll{
     0%{
