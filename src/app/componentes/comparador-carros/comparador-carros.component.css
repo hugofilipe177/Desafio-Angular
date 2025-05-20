@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-main{
-    height: 100%;
-    display: flex;
-}
-#container_comparador{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-}
-.carros{
-    height: 30%;
-    justify-content: center;
-    width: 15%;
-    margin-right: 7%;
-    margin-left: 10%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    border: 1px black solid;
-    border-radius: 10px;
-=======
->>>>>>> apresentação
 
 :root {
     --primary-blue: #1a4b8c;
@@ -32,23 +6,10 @@ main{
     --accent-blue: #3a7bd5;
     --dark-gray: #2d3748;
 }
-<<<<<<< HEAD
-#imagem_carro{
-    width: 100%;
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-img{
-    width: 100%;
-    height:min-content ;
-=======
 
 body {
     background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
->>>>>>> apresentação
 }
 form{
     margin-top: 1%;

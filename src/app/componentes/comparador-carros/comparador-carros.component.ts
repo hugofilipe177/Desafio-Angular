@@ -45,31 +45,11 @@ export class ComparadorCarrosComponent implements OnInit {
       }
     });
 
-<<<<<<< HEAD
-  } 
-  checkbox(event: Event, item: Comparador) {
-    const checked = (event.target as HTMLInputElement).checked;
-    if(checked){
-      if(this.itemSelecionado.length >= 2){
-        (event.target as HTMLInputElement).checked = false;
-        alert('voce')
-      }
-    }
-    if (checked) {
-      if (!this.itemSelecionado.some(i => i.id === item.id)) {
-        this.itemSelecionado.push(item);
-      }
-    } else {
-      this.itemSelecionado = this.itemSelecionado.filter(i => i.id !== item.id);
-    }
-    console.log('Selecionados:', this.itemSelecionado);
-=======
     this.selectCar.controls.car1Selected.valueChanges.subscribe(id => {
       console.log(id)
       this.carro1 = this.carros()!.find(c => c.id === id) ?? null;
       console.log(this.carro1);
     });
->>>>>>> apresentação
   }
 
   pesquisarCarros2(): void {
