@@ -27,9 +27,7 @@ export class CarouselComponent implements OnInit{
     this.servicoBack.api_carousel().subscribe({
       next: (data) =>{
         this.Carousel = data.carousel;
-
         this.displayItems = [...this.Carousel, ...this.Carousel];
-        console.log('Itens do carrossel (duplicados):', this.displayItems);
       },
       error: (err) => {
         console.log('este é o erro:', err);

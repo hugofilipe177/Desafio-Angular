@@ -38,7 +38,6 @@ export class ComparadorCarrosComponent implements OnInit {
     this.servicoBack.api_comparador().subscribe({
       next: data => {
         this.carros.set(data.specs)
-        console.log(data)
       },
       error: (err) => {
         console.error('Erro ao carregar carros:', err);
@@ -46,9 +45,7 @@ export class ComparadorCarrosComponent implements OnInit {
     });
 
     this.selectCar.controls.car1Selected.valueChanges.subscribe(id => {
-      console.log(id)
       this.carro1 = this.carros()!.find(c => c.id === id) ?? null;
-      console.log(this.carro1);
     });
   }
 
@@ -56,7 +53,6 @@ export class ComparadorCarrosComponent implements OnInit {
     this.servicoBack.api_comparador().subscribe({
       next: data => {
         this.carros.set(data.specs)
-        console.log(data)
       },
       error: (err) => {
         console.error('Erro ao carregar carros:', err);
@@ -64,9 +60,7 @@ export class ComparadorCarrosComponent implements OnInit {
     });
 
     this.selectCar.controls.car2Selected.valueChanges.subscribe(id => {
-      console.log(id)
       this.carro2 = this.carros()!.find(c => c.id === id) ?? null;
-      console.log(this.carro2)
     });
   }
 }
