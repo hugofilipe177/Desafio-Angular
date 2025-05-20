@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="select-container">
-                <label for="carSelect" class="form-label fw-bold mb-3" style="color: var(--primary-blue);">Selecione
+                <label for="carSelect" class="form-label fw-bold mb-3">Selecione
                     um modelo:</label>
                 <form [formGroup]="selectCar">
                     <select (change)="mudarcarro(carro.value)" #carro class="form-select" formControlName="selectedCar">
@@ -62,7 +62,7 @@
                         <h2 class="car-title" id="carName"></h2>
                         <p class="car-description" id="carDescription"></p>
                         <div class="divider"></div>
-                        <h5 class="fw-bold mb-4" style="color: var(--primary-blue);">Destaques do Modelo</h5>
+                        <h5 class="fw-bold mb-4">Destaques do Modelo</h5>
                         <div class="row" id="carHighlights"> 
                             <p>  {{carSelecionado()!.preco}} <br>
                                 {{carSelecionado()!.motor}} <br>

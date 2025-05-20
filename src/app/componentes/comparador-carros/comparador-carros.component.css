@@ -1,12 +1,4 @@
 
-:root {
-    --primary-blue: #1a4b8c;
-    --dark-blue: #0d2b4e;
-    --light-blue: #e6f0ff;
-    --accent-blue: #3a7bd5;
-    --dark-gray: #2d3748;
-}
-
 body {
     background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
