@@ -85,6 +85,10 @@ ford-website/
 │   │   │                └── servico-back.service.ts
 │   │   ├── services/
 │   │   ├── models/
+│   │   │    ├── carousel.ts
+│   │   │    ├── comparador.ts
+│   │   │    ├── usuario.model.ts
+│   │   │    └── veiculo.model.ts
 │   │   ├── app-routing.module.ts
 │   │   └── app.module.ts
 │   ├── assets/
