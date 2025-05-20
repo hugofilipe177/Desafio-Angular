@@ -1,6 +1,6 @@
-# 🚗 Ford Official Website
+# 🚗 Site para administradores
 
-Bem-vindo ao repositório do **Site Oficial da Ford** – uma aplicação web moderna e responsiva, construída com Angular, que entrega uma experiência imersiva ao usuário com a marca Ford, seus veículos e serviços.
+Bem-vindo ao repositório do **Site de administradores da Ford** – uma aplicação web moderna e responsiva, construída com Angular, que entrega uma experiência imersiva ao usuário com a marca Ford, seus veículos e serviços.
 
 ---
 
@@ -8,11 +8,11 @@ Bem-vindo ao repositório do **Site Oficial da Ford** – uma aplicação web mo
 
 Este site tem como objetivos:
 
-- Apresentar os modelos da Ford com design atrativo e interatividade.
-- Permitir agendamentos de test drives.
-- Oferecer simulação de financiamento.
-- Integrar localização de concessionárias.
-- Disponibilizar uma área do cliente com autenticação.
+- Apresentar os modelos de carros da Ford com design atrativo e interatividade.
+- Área de Login exclusiva para trabalhadores da ford.
+- página exclusiva para checagem rápida sobre os modelos disponíveis nosistema.
+- Página exclusiva para comparação entre modelos disponíveis.
+- Página exclusiva para fazer alguma reclamação ou relatar bugs contidos no site ou Sugestões de melhorias.
 
 ---
 
