@@ -1,4 +1,5 @@
 export interface Comparador {
+    [x: string]: any;
     id: number | string;
     nome: string;
     preco: string;

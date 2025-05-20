@@ -1,6 +1,4 @@
-<header>
-    <app-header></app-header>
-</header>
+<!-- 
 <main>
     <div id="container_comparador">
         <div *ngFor="let item of comparador" class="carros">
@@ -13,4 +11,98 @@
             </div>
         </div>
     </div>
-</main>
+</main> -->
+<!-- Seleção de carros -->
+<header>
+    <app-header></app-header>
+</header>
+<form [formGroup]="selectCar" class="row mb-4">
+    <div class="col-md-5">
+        <div class="card card-custom select-box">
+            <div class="card-body">
+                <h5 class="card-title title_">Carro 1</h5>
+                <select formControlName="car1Selected" class="form-select mb-3">
+                    <option [value]="null">Selecione um carro</option>
+                    <option *ngFor="let c of carros() ?? []" [ngValue]="c.id">
+                        {{ c.nome }}
+                    </option>
+                </select>
+                <div id="car1-info" class="text-center" *ngIf="carro1">
+                    <img id="car1-image" [src]="carro1.img" class="car-image" alt="Carro 1">
+                    <h4 id="car1-name"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-2 d-flex align-items-center justify-content-center">
+        <h3 class="text-muted">VS</h3>
+    </div>
+
+    <div class="col-md-5">
+        <div class="card card-custom select-box">
+            <div class="card-body">
+                <h5 class="card-title title_">Carro 2</h5>
+                <select formControlName="car2Selected" class="form-select mb-3">
+                    <option [value]="null">Selecione um carro</option>
+                    <option *ngFor="let c of carros() ?? []" [ngValue]="c.id">
+                        {{ c.nome }}
+                    </option>
+                </select>
+                <div id="car1-info" class="text-center" *ngIf="carro2">
+                    <img id="car1-image" [src]="carro2.img" class="car-image" alt="Carro 1">
+                    <h4 id="car1-name"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Comparação só aparece quando os dois objetos estiverem definidos -->
+<div *ngIf="carro1 && carro2" class="comparison-section">
+    <h3 class="text-center mb-4 title_">
+        <i class="fas fa-chart-bar me-2"></i>Comparação Detalhada
+    </h3>
+    <div class="row">
+        <!-- Card Carro 1 -->
+        <div class="col-md-6">
+            <div class="card card-custom h-100">
+                <div class="card-header card-header-custom">
+                    <h4 class="mb-0">{{ carro1.nome }}</h4>
+                </div>
+                <div class="card-body">
+                    <div class="spec-item"><span>Preço:</span><span class="float-end">{{ carro1.preco }}</span></div>
+                    <div class="spec-item"><span>Motor:</span><span class="float-end">{{ carro1.motor }}</span></div>
+                    <div class="spec-item"><span>Potência:</span><span class="float-end">{{ carro1.potencia }} cv</span>
+                    </div>
+                    <div class="spec-item"><span>Roda:</span><span class="float-end">{{ carro1.roda }}</span></div>
+                    <div class="spec-item"><span>Altura do Veiculo:</span><span class="float-end">{{
+                            carro1.alturaVeiculo }}</span></div>
+                    <div class="spec-item"><span>Altura do Solo:</span><span class="float-end">{{ carro1.alturaSolo
+                            }}</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Carro 2 -->
+        <div class="col-md-6">
+            <div class="card card-custom h-100">
+                <div class="card-header card-header-custom">
+                    <h4 class="mb-0">{{ carro2.nome }}</h4>
+                </div>
+                <div class="card-body">
+                    <div class="spec-item"><span>Preço:</span><span class="float-end">{{ carro2.preco }}</span></div>
+                    <div class="spec-item"><span>Motor:</span><span class="float-end">{{ carro2.motor }}</span></div>
+                    <div class="spec-item"><span>Potência:</span><span class="float-end">{{ carro2.potencia }} cv</span>
+                    </div>
+                    <div class="spec-item"><span>Roda:</span><span class="float-end">{{ carro2.roda }} </span></div>
+                    <div class="spec-item"><span>Altura do Veiculo:</span><span class="float-end">{{
+                            carro2.alturaVeiculo }} </span></div>
+                    <div class="spec-item"><span>Altura do Solo:</span><span class="float-end">{{ carro2.alturaSolo }}
+                        </span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

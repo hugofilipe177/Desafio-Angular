@@ -1,97 +1,113 @@
 <app-header></app-header>
-<main>
-    <div id="container-main">
-        <div class="container mt-4">
-            <div class="row">
 
-                <div class="col-md-3 mb-4">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <div>
-                                <h5 class="card-title">Selecione o Carro</h5>
-                            </div>
-                            <form [formGroup]="selectCar">
-                                <select (change)="mudarcarro(carro.value)" #carro class="form-select"
-                                    formControlName="selectedCar">
-                                    <option *ngFor="let car of vehicles" [value]="car.id">
-                                        {{ car.vehicle }}
-                                    </option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="select-container">
+                <label for="carSelect" class="form-label fw-bold mb-3" style="color: var(--primary-blue);">Selecione
+                    um modelo:</label>
+                <form [formGroup]="selectCar">
+                    <select (change)="mudarcarro(carro.value)" #carro class="form-select" formControlName="selectedCar">
+                        <option selected disabled>Escolha um modelo</option>
+                        <option *ngFor="let car of vehicles" [value]="car.id">{{ car.vehicle }}</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="infoCards">
+        <div *ngIf="carSelecionado()" class="row" id="infoCards">
+            <div class="col-6 col-md-4 mb-4">
+                <div class="info-card text-center">
+                    <i class="fas fa-boxes‐stacked info-icon"></i>
+                    <h6 class="info-title">Volume Total</h6>
+                    <p class="info-value">{{ carSelecionado()!.volumetotal }}</p>
                 </div>
+            </div>
 
-                <div class="col-md-3 mb-4">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Total de Vendas</h5>
-                            <p class="card-text">{{ carSelecionado()?.volumetotal}}</p>
-                        </div>
-                    </div>
+            <div class="col-6 col-md-4 mb-4">
+                <div class="info-card text-center">
+                    <i class="fas fa-link info-icon"></i>
+                    <h6 class="info-title">Conectados</h6>
+                    <p class="info-value">{{ carSelecionado()!.connected }}</p>
                 </div>
+            </div>
 
-                <div class="col-md-3 mb-4">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Conectados</h5>
-                            <p class="card-text">{{carSelecionado()?.connected}}</p>
-                        </div>
-                    </div>
+            <div class="col-6 col-md-4 mb-4">
+                <div class="info-card text-center">
+                    <i class="fas fa-sync-alt info-icon"></i>
+                    <h6 class="info-title">Atualizações SW</h6>
+                    <p class="info-value">{{ carSelecionado()!.softwareUpdates }}</p>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-3 mb-4">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Update Software</h5>
-                            <p class="card-text">{{carSelecionado()?.softwareUpdates}}</p>
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="main-card" id="carDisplay">
+                <div class="default-content" id="defaultContent" *ngIf="!carSelecionado()">
+                    <i class="fas fa-car default-icon"></i>
+                    <h2 class="default-title">Selecione um carro</h2>
+                    <p class="default-text">Escolha um modelo na lista acima para visualizar informações detalhadas e
+                        imagens exclusivas</p>
+                </div>
+                <div class="row" id="carContent" *ngIf="carSelecionado()">
+                    <div class="col-md-6 car-image-container">
+                        <img [src]="carSelecionado()?.img" alt="Imagem do carro" class="img-fluid car-image"
+                            id="carImage">
+                    </div>
+                    <div class="col-md-6 car-details">
+                        <h2 class="car-title" id="carName"></h2>
+                        <p class="car-description" id="carDescription"></p>
+                        <div class="divider"></div>
+                        <h5 class="fw-bold mb-4" style="color: var(--primary-blue);">Destaques do Modelo</h5>
+                        <div class="row" id="carHighlights"> 
+                            <p>  {{carSelecionado()!.preco}} <br>
+                                {{carSelecionado()!.motor}} <br>
+                                {{carSelecionado()!.potencia}} <br>
+                                {{carSelecionado()!.roda}} <br>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid justify-content-center align-items-center d-flex flex-fill">
-            <img  id="foto_carros" class="img-fluid w-50" [src]="carSelecionado()?.img" alt="">
-        </div>
-        <br><br>
-
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col" class="vin-cima"> código-Vin </th>
-                        <th scope="col" class="vin-cima"> Odometro </th>
-                        <th scope="col" class="vin-cima"> Nivel de combustivel </th>
-                        <th scope="col" class="vin-cima"> status </th>
-                        <th scope="col" class="vin-cima"> lat. </th>
-                        <th scope="col" class="vin-cima"> long. </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                                <input name="código-Vin" placeholder="Digite o código" #vin (change)="pesquisarVin(vin.value)">
-                        </th>
-                        <td>{{ vinSelecionado()?.odometro }}</td>
-                        <td>{{ vinSelecionado()?.nivelCombustivel}}</td>
-                        <td>{{ vinSelecionado()?.status}}</td>
-                        <td>{{ vinSelecionado()?.lat}}</td>
-                        <td>{{ vinSelecionado()?.long}}</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h4 class="footer-title text-center">Tabela de Pesquisa de Especificações</h4>
+            <div class="search-table p-3">
+                <div class="mb-3">
+                    <input name="código-Vin"type="text" class="form-control search-input" id="searchInput" placeholder="Pesquisar especificações..."  placeholder="Digite o código" #vin (change)="pesquisarVin(vin.value)">
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>odometro</th>
+                                <th>Nivel de Gasolina</th>
+                                <th>Status</th>
+                                <th>Lat</th>
+                                <th>Long</th>
+                            </tr>
+                        </thead>
+                        <tbody id="searchResults">
+                            <td>{{ vinSelecionado()?.odometro }}</td>
+                            <td>{{ vinSelecionado()?.nivelCombustivel}}</td>
+                            <td>{{ vinSelecionado()?.status}}</td>
+                            <td>{{ vinSelecionado()?.lat}}</td>
+                            <td>{{ vinSelecionado()?.long}}</td>
+                        </tbody>
+                    </table>
+                    <div id="noResults" class="no-results d-none">
+                        Nenhum resultado encontrado para sua pesquisa.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-
-
-</main>
+</div>

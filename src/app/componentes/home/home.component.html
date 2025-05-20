@@ -1,20 +1,40 @@
 <app-header></app-header>
-<main>
-    <div class="modal fade" tabindex="-1" id="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Sistema de dados FORD</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-              <p id="bem_vindo">Seja bem vindo(a) {{ perfilData?.nome }}!  </p> <p id="email">Email: {{ perfilData?.email }}</p>
-            </div>
-          </div>
+<div id="mainCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+  <app-carousel></app-carousel>
+</div>
+<main class="container mt-5">
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+        <img src="/ArquivosDeSuporteDesafioAngular/img/painel.png" alt="painel" class="imgCard">  
+          <h5 class="card-title">Dashboard</h5>
+          <p class="card-text">Acesse todas as métricas e indicadores em um único lugar.</p>
+          <a href="dashboard" class="btn btn-ford">Acessar</a>
         </div>
       </div>
-      <div id="container-carousel">
-      <app-carousel></app-carousel>
-     </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <img src="/ArquivosDeSuporteDesafioAngular/img/comparação_F.png" alt="Comparação" class="imgCard">  
+          <h5 class="card-title">Comparar</h5>
+          <p class="card-text">Faça comparações entre nossos carros disponíveis</p>
+          <a href="comparadordecarros" class="btn btn-ford">ir Comparar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <img src="/ArquivosDeSuporteDesafioAngular/img/contato.png" alt="Contato" class="imgCard">  
+          <h5 class="card-title">Contato</h5>
+          <p class="card-text">Encontrou algum bug ou quer alguma mudança ? <br> contate-nos clicando no botão abaixo</p>
+          <a href="contato" class="btn btn-ford">Contatar</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
+<app-footer></app-footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

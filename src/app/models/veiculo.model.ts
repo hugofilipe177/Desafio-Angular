@@ -7,6 +7,10 @@ export interface Veiculo{
   connected: number | string
   softwareUpdates: number | string
   img: string
+  preco: string;
+  motor: string;
+  potencia: string;
+  roda: string;
 }
 
 export interface vinVeiculos {

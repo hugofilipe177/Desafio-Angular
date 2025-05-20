@@ -1,0 +1,90 @@
+<app-header></app-header>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="contact-card">
+        <div class="header-bg p-4 text-center">
+          <h2><i class="fas fa-envelope me-2"></i> Formulário de Contato</h2>
+          <p class="mb-0">Preencha os campos abaixo para entrar em contato conosco</p>
+        </div>
+
+        <div class="p-4">
+          <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+              <label for="nome" class="form-label">
+                <i class="fas fa-user contact-icon me-2"></i>Nome Completo
+              </label>
+              <input type="text" id="nome" class="form-control" formControlName="nome"
+                placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="mb-3">
+              <label for="cpf" class="form-label">
+                <i class="fas fa-id-card contact-icon me-2"></i>CPF
+              </label>
+              <input type="text" id="cpf" class="form-control" formControlName="cpf" placeholder="Digite seu CPF">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">
+                <i class="fas fa-phone-alt contact-icon me-2"></i>Prefere ser contactado por:
+              </label>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="emailRadio" formControlName="contactMethod"
+                      value="email" (change)="onTipoChange()">
+                    <label class="form-check-label" for="emailRadio">E-mail</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="phoneRadio" formControlName="contactMethod"
+                      value="phone" (change)="onTipoChange()">
+                    <label class="form-check-label" for="phoneRadio">Telefone</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" *ngIf="tipoSelecionado === 'email'">
+              <input type="email" class="form-control" formControlName="email" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="mb-3" *ngIf="tipoSelecionado === 'phone'">
+              <input type="tel" class="form-control" formControlName="phone" placeholder="Digite seu telefone">
+            </div>
+
+            <div class="mb-3">
+              <label for="contactReason" class="form-label">
+                <i class="fas fa-question-circle contact-icon me-2"></i>Motivo do Contato
+              </label>
+              <select id="contactReason" class="form-select" formControlName="contactReason">
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="bug">Relatar um Bug</option>
+                <option value="complaint">Reclamação</option>
+                <option value="suggestion">Sugestão de Melhoria</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="form-label">
+                <i class="fas fa-comment contact-icon me-2"></i>Mensagem
+              </label>
+              <textarea id="message" class="form-control" rows="5" formControlName="message"
+                placeholder="Descreva detalhadamente o motivo do seu contato"></textarea>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="!contatoForm.valid">
+                <i class="fas fa-paper-plane me-2"></i> Enviar Mensagem
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
