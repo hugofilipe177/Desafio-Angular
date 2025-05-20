@@ -1,80 +1,45 @@
-/* .fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.contact-header {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-}
-
 .contact-card {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 139, 0.1);
+    border-top: 5px solid #1e90ff;
 }
 
-.form-control:focus, .form-select:focus {
-    border-color: #6a11cb;
-    box-shadow: 0 0 0 0.25rem rgba(106, 17, 203, 0.25);
+.header-bg {
+    background-color: #1e90ff;
+    color: white;
+    border-radius: 10px 10px 0 0;
 }
 
 .btn-primary {
-    background-color: #6a11cb;
-    border-color: #6a11cb;
+    background-color: #1e90ff;
+    border-color: #1e90ff;
 }
 
 .btn-primary:hover {
-    background-color: #5a0db1;
-    border-color: #5a0db1;
+    background-color: #0066cc;
+    border-color: #0066cc;
 }
 
-.social-icon {
-    transition: all 0.3s ease;
+.contact-icon {
+    color: #1e90ff;
+    font-size: 1.2rem;
 }
 
-.social-icon:hover {
-    transform: translateY(-3px);
-    color: #6a11cb !important;
-} */
+.form-control:focus,
+.form-select:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 0 0.25rem rgba(30, 144, 255, 0.25);
+}
 
-  .contact-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 139, 0.1);
-            border-top: 5px solid #1e90ff;
-        }
-        .header-bg {
-            background-color: #1e90ff;
-            color: white;
-            border-radius: 10px 10px 0 0;
-        }
-        .btn-primary {
-            background-color: #1e90ff;
-            border-color: #1e90ff;
-        }
-        .btn-primary:hover {
-            background-color: #0066cc;
-            border-color: #0066cc;
-        }
-        .contact-icon {
-            color: #1e90ff;
-            font-size: 1.2rem;
-        }
-        .form-control:focus, .form-select:focus {
-            border-color: #1e90ff;
-            box-shadow: 0 0 0 0.25rem rgba(30, 144, 255, 0.25);
-        }
-        .contact-method {
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 15px;
-        }
-        .contact-method.active {
-            border-color: #1e90ff;
-            background-color: rgba(30, 144, 255, 0.05);
-        }
+.contact-method {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-method.active {
+    border-color: #1e90ff;
+    background-color: rgba(30, 144, 255, 0.05);
+}

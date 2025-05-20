@@ -7,36 +7,54 @@
             </div>
             <div class="card-body">
                 <form action="">
+                    <!-- Campo de Nome -->
                     <div class="mb-3">
                         <label for="email" class="form-label">Nome</label>
                         <div class="input-group">
                             <span class="input-group-text "><i class="fas fa-envelope"></i></span>
-                            <input type="text" class="form-control login mb-0" id="nome" placeholder="coloque seu nome"  [formControl]="nome" id="nome" required>
+                            <input type="text" class="form-control login mb-0" id="nome" placeholder="coloque seu nome"
+                                [formControl]="nome" id="nome" required>
                         </div>
                     </div>
+                    <!-- Campo de Senha -->
                     <div class="mb-3">
                         <label for="password" class="form-label">Senha</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                            <input [type]="mostrar_Senha ? 'text' : 'password'"  name= 'Senha' class="form-control login .text-black-50 mb-0" [formControl]='senha' id="senha"  placeholder="Enter your password" required>
+                            <input [type]="mostrar_Senha ? 'text' : 'password'" name='Senha'
+                                class="form-control login .text-black-50 mb-0" [formControl]='senha' id="senha"
+                                placeholder="Enter your password" required>
                         </div>
                     </div>
+
+                      <!-- Lembrar login -->
+
                     <div class="mb-3 d-flex justify-content-between align-items-center">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="remember">
-                            <label class="form-check-label" for="remember">Remember me</label>
+                            <label class="form-check-label" for="remember">Lembrar de mim</label>
                         </div>
                     </div>
-                          <input type="button" value="Logar" class="botao_errado btn btn-primary mb-4"  id="botao_submit" (click)="checkarLogin()">
-                    
+
+                    <!-- Mensagem de erro para todos os possiveis erros -->
+
+                    <span class="error">{{this.mensagemErro}}</span>
+
+                    <!-- Botão de Login -->
+                    <input type="button" value="Logar" class="botao_errado btn btn-primary mb-4" id="botao_submit"
+                        (click)="checkarLogin()">
+
+                         <!-- Redes sociais -->
+
                     <div class="divider">
                         <span class="divider-text">Redes Sociais</span>
                     </div>
-                    
+
                     <div class="social-btn">
-                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.instagram.com/fordbrasil/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-apple"></i></a>
+                        <a href="https://www.facebook.com/FordBrasil/?locale=pt_BR" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/fordbrasil/" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@ford" class="social-icon"><i class="fa-brands fa-youtube"></i>/a>
                     </div>
                 </form>
             </div>

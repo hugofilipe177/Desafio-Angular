@@ -44,7 +44,7 @@ export class ContatoComponent {
   }
 
   onTipoChange() {
-    // Força disparo do valueChanges se necessário
+
     const current = this.contatoForm.get('contactMethod')!.value;
     this.contatoForm.get('contactMethod')!.setValue(current);
   }
@@ -52,7 +52,6 @@ export class ContatoComponent {
   onSubmit() {
     if (this.contatoForm.valid) {
       console.log('Dados do formulário:', this.contatoForm.value);
-      // Aqui você pode enviar para a API via serviço
     } else {
       console.warn('Formulário inválido:', this.contatoForm.errors);
     }

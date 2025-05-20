@@ -14,11 +14,9 @@ import { Router } from '@angular/router';
   styleUrl: './comparador-carros.component.css'
 })
 export class ComparadorCarrosComponent implements OnInit {
-  comparador: Comparador[]=[];
-  itemSelecionado: Comparador[]=[];
+  comparador: Comparador[] = [];
   form!: Comparador;
   carroSelecionado = signal<Comparador | null>(null);
-  
   carro1: Comparador | null = null;
   carro2: Comparador | null = null;
 
@@ -28,16 +26,16 @@ export class ComparadorCarrosComponent implements OnInit {
   });
   carros = signal<Comparador[] | null>(null)
 
-  constructor(private router:Router, private servicoBack: ServicoBackComponent){}
+  constructor(private router: Router, private servicoBack: ServicoBackComponent) { }
 
-  
+
   ngOnInit(): void {
     this.pesquisarCarros();
     this.pesquisarCarros2();
   }
-  
+
   pesquisarCarros(): void {
-     this.servicoBack.api_comparador().subscribe({
+    this.servicoBack.api_comparador().subscribe({
       next: data => {
         this.carros.set(data.specs)
         console.log(data)
@@ -46,20 +44,16 @@ export class ComparadorCarrosComponent implements OnInit {
         console.error('Erro ao carregar carros:', err);
       }
     });
-  
+
     this.selectCar.controls.car1Selected.valueChanges.subscribe(id => {
       console.log(id)
       this.carro1 = this.carros()!.find(c => c.id === id) ?? null;
       console.log(this.carro1);
     });
   }
-  // mudarcarro(carroAtual: string){
-  //    const found = this.carro1.find(v => v.id == Number(carroAtual));
-  //    this.carroSelecionado.set(found!)
-  // }
 
   pesquisarCarros2(): void {
-     this.servicoBack.api_comparador().subscribe({
+    this.servicoBack.api_comparador().subscribe({
       next: data => {
         this.carros.set(data.specs)
         console.log(data)
@@ -68,15 +62,11 @@ export class ComparadorCarrosComponent implements OnInit {
         console.error('Erro ao carregar carros:', err);
       }
     });
-  
+
     this.selectCar.controls.car2Selected.valueChanges.subscribe(id => {
       console.log(id)
       this.carro2 = this.carros()!.find(c => c.id === id) ?? null;
       console.log(this.carro2)
     });
-  }  
-  // mudarcarro2(carroAtual: string){
-  //    const found = this.comparador.find(v => v.id == Number(carroAtual));
-  //    this.carroSelecionado.set(found!)
-  // }
+  }
 }
