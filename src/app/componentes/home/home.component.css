@@ -1,10 +1,6 @@
-:root {
-    --ford-blue: #00274C;
-    --ford-orange: #FFCB05;
-}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding-top: 56px;
 }
 

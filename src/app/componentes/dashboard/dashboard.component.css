@@ -1,229 +1,224 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
 
+.header {
+    background: linear-gradient(135deg, #0a2463, #001845);
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-     :root {
-            --primary-blue: #0a2463;
-            --secondary-blue: #3e92cc;
-            --dark-blue: #001845;
-            --light-blue: #d6e9ff;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #0a2463, #001845);
-            color: white;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-title {
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        
-        .select-container {
-            background-color: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-select {
-            border: 2px solid #d6e9ff;
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-        
-        .form-select:focus {
-            border-color: #3e92cc;
-            box-shadow: 0 0 0 0.25rem rgba(62, 146, 204, 0.25);
-        }
-        
-        .main-card {
-            background: linear-gradient(145deg, white, #d6e9ff);
-            border-radius: 16px;
-            box-shadow: 0 12px 28px rgba(0, 40, 104, 0.15);
-            overflow: hidden;
-            border: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 2rem;
-        }
-        
-        .main-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(0, 40, 104, 0.2);
-        }
-        
-        .car-image-container {
-            background: linear-gradient(145deg, #0a2463, );
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 300px;
-        }
-        
-        .car-image {
-            max-height: 220px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
-            transition: transform 0.3s;
-        }
-        
-        .car-image:hover {
-            transform: scale(1.05);
-        }
-        
-        .car-details {
-            padding: 2rem;
-        }
-        
-        .car-title {
-            color: #0a2463;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .car-description {
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .info-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            transition: all 0.3s ease;
-            height: 100%;
-            border-top: 4px solid #3e92cc;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 40, 104, 0.15);
-            border-top: 4px solid #0a2463;
-        }
-        
-        .info-icon {
-            font-size: 2rem;
-            color: #3e92cc;
-            margin-bottom: 1rem;
-        }
-        
-        .info-title {
-            color: #0a2463;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-        
-        .info-value {
-            color: #001845;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-        
-        .default-content {
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        
-        .default-icon {
-            font-size: 4rem;
-            color: #3e92cc;
-            margin-bottom: 1.5rem;
-            opacity: 0.7;
-        }
-        
-        .default-title {
-            color: #0a2463;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .default-text {
-            color: #666;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #d6e9ff, transparent);
-            margin: 2rem 0;
-        }
-         .footer-title {
-            color: #1e88e5;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .search-table {
-            background: linear-gradient(145deg, #d6e9ff);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        font{
-            background-color: #d6e9ff;
-        }
-        
-        .search-input {
-            background-color: #d6e9ff;
-            border: 1px solid #1565c0;
-            color: white;
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-        }
-        
-        .search-input:focus {
-            background-color: #d6e9ff;
-            border-color: #1e88e5;
-            box-shadow: 0 0 0 0.25rem rgba(30, 136, 229, 0.25);
-            color: white;
-        }
-        
-        .table {
-            margin-bottom: 0;
-            color: #e0e0e0;
-        }
-        
-        .table th {
-            background-color: #1565c0;
-            color: white;
-            border-bottom: 2px solid #1e88e5;
-        }
-        
-        .table td, .table th {
-            padding: 0.75rem;
-            vertical-align: middle;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            
-        }
-        .table td{
-            color: #0a2463;
-        }
-        
-        .table-hover tbody tr:hover {
-            background-color: rgba(30, 136, 229, 0.1);
-        }
-        
-        .no-results {
-            color: #b0bec5;
-            text-align: center;
-            padding: 1.5rem;
-        }
+.header-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.select-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.form-select {
+    border: 2px solid #d6e9ff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.form-select:focus {
+    border-color: #3e92cc;
+    box-shadow: 0 0 0 0.25rem rgba(62, 146, 204, 0.25);
+}
+
+.main-card {
+    background: linear-gradient(145deg, white, #d6e9ff);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 40, 104, 0.15);
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 2rem;
+}
+
+.main-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 40, 104, 0.2);
+}
+
+.car-image-container {
+    background: linear-gradient(145deg, #0a2463, );
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.car-image {
+    max-height: 220px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s;
+}
+
+.car-image:hover {
+    transform: scale(1.05);
+}
+
+.car-details {
+    padding: 2rem;
+}
+
+.car-title {
+    color: #0a2463;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.car-description {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    height: 100%;
+    border-top: 4px solid #3e92cc;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 40, 104, 0.15);
+    border-top: 4px solid #0a2463;
+}
+
+.info-icon {
+    font-size: 2rem;
+    color: #3e92cc;
+    margin-bottom: 1rem;
+}
+
+.info-title {
+    color: #0a2463;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    color: #001845;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.default-content {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.default-icon {
+    font-size: 4rem;
+    color: #3e92cc;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+
+.default-title {
+    color: #0a2463;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.default-text {
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d6e9ff, transparent);
+    margin: 2rem 0;
+}
+
+.footer-title {
+    color: #1e88e5;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.search-table {
+    background: linear-gradient(145deg, #d6e9ff);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+font {
+    background-color: #d6e9ff;
+}
+
+.search-input {
+    background-color: #d6e9ff;
+    border: 1px solid #1565c0;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+}
+
+.search-input:focus {
+    background-color: #d6e9ff;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 0.25rem rgba(30, 136, 229, 0.25);
+    color: white;
+}
+
+.table {
+    margin-bottom: 0;
+    color: #e0e0e0;
+}
+
+.table th {
+    background-color: #1565c0;
+    color: white;
+    border-bottom: 2px solid #1e88e5;
+}
+
+.table td,
+.table th {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+}
+
+.table td {
+    color: #0a2463;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(30, 136, 229, 0.1);
+}
+
+.no-results {
+    color: #b0bec5;
+    text-align: center;
+    padding: 1.5rem;
+}
