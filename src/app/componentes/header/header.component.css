@@ -94,3 +94,7 @@ button span{
     margin: 0;
     margin-left: 35%;
 }
+a{
+    text-decoration: none;
+    color: black;
+}

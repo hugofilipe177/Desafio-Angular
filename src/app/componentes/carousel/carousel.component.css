@@ -40,6 +40,9 @@ img{
 img:hover{
     transform: translateZ(20px);
 }
+.nome{
+    margin-top: 3%;
+}
 @keyframes scroll{
     0%{
         transform: translateX(0);
