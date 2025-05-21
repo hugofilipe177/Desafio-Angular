@@ -20,7 +20,7 @@ Este site tem como objetivos:
 ## 🔗 Acesso ao Projeto
 Você pode acessar o site em funcionamento por meio do link abaixo:
 
-👉 [Acessar site online via Vercel](https://desafio-angular-xi.vercel.app/home)
+👉 [Acessar site online via Vercel](https://desafio-angular-xi.vercel.app/login)
 
 ---
 📌 Sprint Backlog
