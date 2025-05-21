@@ -24,9 +24,11 @@ Você pode acessar o site em funcionamento por meio do link abaixo:
 
 ---
 ##📌 Sprint Backlog
+
 A solicitação feita no Product Backlog foi que, a partir dos conhecimentos adquiridos anteriormente e dos sites já desenvolvidos, fosse criado um novo site aplicando todas as boas práticas e os aprendizados em Angular, HTML, CSS e JavaScript. O objetivo era consolidar os conhecimentos por meio da construção de um projeto completo, funcional e responsivo.
 
 ##📌 Sprint Retrospective
+
 A checagem e a melhoria do código foram realizadas com sucesso. A partir do desafio Angular, foi feita uma remodelagem completa de todas as páginas, tornando-as mais responsivas e visualmente agradáveis, além da implementação de novas funcionalidades e páginas.
 
 Login: o layout do login foi completamente reformulado para oferecer uma melhor experiência visual ao usuário, com foco em estética e usabilidade.
