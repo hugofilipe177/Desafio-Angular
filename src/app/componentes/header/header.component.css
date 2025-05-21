@@ -68,6 +68,7 @@ button span{
 #div_perfil{
     margin-right: 1%;
     width: 3%;
+    width:3%;
 }
 #logoford{
     display: flex;
@@ -94,7 +95,13 @@ button span{
     margin: 0;
     margin-left: 35%;
 }
-a{
-    text-decoration: none;
-    color: black;
+@media screen and (max-width: 875px) {
+    #div_perfil{
+        width: 5%;
+    }
+}
+@media screen and (max-width: 515px) {
+    #div_perfil{
+        width:7%
+    }
 }
