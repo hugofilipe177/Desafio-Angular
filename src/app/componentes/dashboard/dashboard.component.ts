@@ -1,6 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule }     from '@angular/forms';  
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';  
 import { ServicoBackComponent } from '../servico-back/servico-back.service';
 import { CommonModule } from '@angular/common';
 import { Veiculo, vinVeiculos } from '../../models/veiculo.model'
