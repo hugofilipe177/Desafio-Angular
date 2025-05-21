@@ -15,6 +15,14 @@ Este site tem como objetivos:
 - Página exclusiva para fazer alguma reclamação ou relatar bugs contidos no site ou Sugestões de melhorias.
 
 ---
+
+
+## 🔗 Acesso ao Projeto
+Você pode acessar o site em funcionamento por meio do link abaixo:
+
+👉 [Acessar site online via Vercel](https://desafio-angular-xi.vercel.app/home)
+
+---
 📌 Sprint Backlog
 A solicitação feita no Product Backlog foi que, a partir dos conhecimentos adquiridos anteriormente e dos sites já desenvolvidos, fosse criado um novo site aplicando todas as boas práticas e os aprendizados em Angular, HTML, CSS e JavaScript. O objetivo era consolidar os conhecimentos por meio da construção de um projeto completo, funcional e responsivo.
 
