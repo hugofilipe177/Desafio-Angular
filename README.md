@@ -23,9 +23,12 @@ Você pode acessar o site em funcionamento por meio do link abaixo:
 👉 [Acessar site online via Vercel](https://desafio-angular-xi.vercel.app/login)
 
 ---
+
 ##📌 Sprint Backlog
 
 A solicitação feita no Product Backlog foi que, a partir dos conhecimentos adquiridos anteriormente e dos sites já desenvolvidos, fosse criado um novo site aplicando todas as boas práticas e os aprendizados em Angular, HTML, CSS e JavaScript. O objetivo era consolidar os conhecimentos por meio da construção de um projeto completo, funcional e responsivo.
+
+---
 
 ##📌 Sprint Retrospective
 
@@ -40,6 +43,7 @@ Dashboard: foram realizadas melhorias visuais, com foco em tornar a página mais
 Página de Comparação: foi criada uma nova página que permite a seleção de dois veículos, exibindo lado a lado suas informações para facilitar a comparação pelo usuário.
 
 Página de Contato: essa página foi criada para que, caso o usuário encontre algum problema, possa enviar uma mensagem relatando o erro. Além disso, também permite o envio de sugestões de melhorias ou reclamações sobre a experiência no site.
+
 ---
 
 ## 🚀 Tecnologias Utilizadas
