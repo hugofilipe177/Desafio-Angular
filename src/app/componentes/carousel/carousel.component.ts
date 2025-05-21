@@ -34,9 +34,4 @@ export class CarouselComponent implements OnInit{
       }
     })
   }
-  Transferencia(){
-    this.route.navigateByUrl('/dashboard')
-  }
-
-
 }
