@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
 }
-body{
-    height: 100dvh;
+html, body{
+    height: 100dvh !important;
+    overflow: auto !important;
+
 }
