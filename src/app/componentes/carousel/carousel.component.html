@@ -1,17 +1,21 @@
-<div id="container-carousel">
-    <div id="Carousel-info">
-    <div *ngFor="let item of displayItems" id="div_itens">
-        <a href="dashboard" id="transferencia">
-            <div class="imagem" id="div_imagem" >
-                <img [src]="item.img" [alt]="item.titulo">
-            </div>
-            <div class="nome">
-                {{ item.titulo}}
-            </div>
+<div id="container-carousel"  #container>
+    <button id="prev_button" (click)="prev()">&#10094;</button>
+  
+    <div id="Carousel-info" [style.transform]="transformStyle">
+      <div *ngFor="let item of Carousel" class="div_itens">
+        <a href="dashboard" class="transferencia">
+          <div class="imagem div_imagem">
+            <img [src]="item.img" [alt]="item.titulo">
+          </div>
+          <div class="nome">
+            {{ item.titulo }}
+          </div>
         </a>
-            <div class="Texto">
-                {{item.descricao}}
-            </div>
+        <div class="Texto">
+          {{ item.descricao }}
         </div>
+      </div>
     </div>
-</div>
+  
+    <button id="next_button" (click)="next()">&#10095;</button>
+  </div>

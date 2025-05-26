@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-comparador-carros',
-  standalone: true,
   imports: [HeaderComponent, CommonModule, ReactiveFormsModule],
   templateUrl: './comparador-carros.component.html',
   styleUrl: './comparador-carros.component.css'

@@ -24,7 +24,6 @@ export class ContatoComponent {
       message: ['', Validators.required]
     });
 
-    // Ajusta validações quando o método de contato muda
     this.contatoForm.get('contactMethod')!.valueChanges.subscribe(method => {
       this.tipoSelecionado = method;
       const emailCtrl = this.contatoForm.get('email')!;

@@ -16,12 +16,10 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   @Input() infoLogin: string | undefined;
   mostrar_Senha: boolean = false
-  // formulários reativos para nome, senha e lembrar login
   nome = new FormControl('');
   senha = new FormControl('');
   auto_login = new FormControl(false);
 
-  // mensagens de erro sobre o login
   nomeErro: string = "";
   senhaErro: string = "";
   mensagemErro: any;
@@ -30,10 +28,7 @@ export class LoginComponent {
 
   constructor(private servico: ServicoBackComponent, private router: Router) { }
 
-  //Criado para checar o login, ao Logar faz as seguintes coisas:
-  // 1) verifica se a senha tem pelo menos 5 caracteres
-  // 2) chama a API de login
-  // 3) trata resposta: navega para home e salva dados ou exibe erros
+
   checkarLogin() {
     const erro = document.querySelectorAll('.erro');
     const validacao = this.servico.api_login(this.nome.value, this.senha.value);
@@ -43,20 +38,17 @@ export class LoginComponent {
       next: (resposta) => {
         if (resposta.id) {
           const infoLogin = resposta;
-          // se tudo for correto, ele transfere para a tela de home
           this.router.navigateByUrl('/home', { state: resposta });
           erro.forEach((elemento) => {
             elemento.innerHTML = '';
           })
         }
-         // se escolheu selecionar, usa localStorage; senão, sessionStorage
         if (this.auto_login.value) {
           localStorage.setItem('loginperfil', JSON.stringify(resposta));
         } else {
           sessionStorage.setItem("loginperfil", JSON.stringify(resposta));
         }
       },
-      // mostra mensagem de erro que vem da api
        error: (error) => {
         if (error.error && error.error.message) {
           this.mensagemErro = error.error.message;
@@ -64,7 +56,6 @@ export class LoginComponent {
       }
     })
   }
-  // Mostra ou esconde a senha no input
   senha_visivel() {
     this.mostrar_Senha = !this.mostrar_Senha;
   }
