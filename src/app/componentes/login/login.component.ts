@@ -36,18 +36,15 @@ export class LoginComponent {
 
     validacao.subscribe({
       next: (resposta) => {
-        if (resposta.id) {
-          const infoLogin = resposta;
-          this.router.navigateByUrl('/home', { state: resposta });
-          erro.forEach((elemento) => {
-            elemento.innerHTML = '';
-          })
-        }
+        localStorage.setItem('token', resposta.token);
+    
         if (this.auto_login.value) {
           localStorage.setItem('loginperfil', JSON.stringify(resposta));
         } else {
-          sessionStorage.setItem("loginperfil", JSON.stringify(resposta));
+          sessionStorage.setItem('loginperfil', JSON.stringify(resposta));
         }
+    
+        this.router.navigateByUrl('/home', { state: resposta });
       },
        error: (error) => {
         if (error.error && error.error.message) {
