@@ -68,7 +68,13 @@ button span{
 #div_perfil{
     margin-right: 1%;
     width: 3%;
-    width:3%;
+}
+.info_perfil{
+    width: 13em;
+
+}
+.perfil_pad{
+    padding-right: 1em;
 }
 #logoford{
     display: flex;

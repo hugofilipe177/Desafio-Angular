@@ -27,15 +27,15 @@
             <img src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000" alt="imagem perfil" id="perfil">
         </a>
 
-        <ul class="dropdown-menu dropdown-menu-start text-small">
+        <ul class="dropdown-menu dropdown-menu-start text-small info_perfil">
             <li>
                 <h5 class="dropdown-header">Login</h5>
             </li>
             <li>
-                <h6 class="dropdown-item info">Nome: {{ perfilData?.nome }}</h6>
+                <h6 class="dropdown-item info "> <div class="perfil_pad"><i class="fa-solid fa-signature"></i> Username: </div> {{ perfilData?.nome }}</h6>
             </li>
             <li>
-                <h6 class="dropdown-item info">Email: {{ perfilData?.email }}</h6>
+                <h6 class="dropdown-item info "> <div  class="perfil_pad"><i class="fa-solid fa-envelope"></i> Email: </div>{{ perfilData?.email }}</h6>
             </li>
             <li>
                 <hr class="dropdown-divider">

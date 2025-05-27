@@ -18,3 +18,18 @@
     background-position: 0% 50%;
   }
 }
+#imagem_ford{ 
+  width: 20%;
+  height: 20%;
+  margin-left: 40%;
+  margin-top: 2%;
+}
+.footer{
+  padding-top: 5%;
+}
+.sistem{
+  padding-top: 2%;
+}
+.copyright{
+  padding-bottom: 2%;
+}
