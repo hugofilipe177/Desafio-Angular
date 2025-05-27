@@ -78,3 +78,33 @@ form{
     border-left: 4px solid #3a7bd5;
     background-color: white;
 }
+.main-card {
+    background: linear-gradient(145deg, white, #d6e9ff);
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 40, 104, 0.15);
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 2rem;
+}
+.main-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 40, 104, 0.2);
+}
+.default-content {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+.default-icon {
+    font-size: 4rem;
+    color: #3e92cc;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+.default-title {
+    color: #0a2463;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+

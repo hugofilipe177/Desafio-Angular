@@ -44,6 +44,18 @@
     </div>
 </form>
 
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="main-card" id="carDisplay">
+            <div class="default-content" id="defaultContent" *ngIf="!carro1 || !carro2">
+                <i class="fas fa-car default-icon"></i>
+                <h2 class="default-title">Selecione um carro</h2>
+                <p class="default-text">Escolha dois modelos nas listas acima para visualizar informações detalhadas e realizar a coparação de cada carro</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div *ngIf="carro1 && carro2" class="comparison-section">
     <h3 class="text-center mb-4 title_">
         <i class="fas fa-chart-bar me-2"></i>Comparação Detalhada
